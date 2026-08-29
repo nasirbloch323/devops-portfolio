@@ -3,702 +3,839 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasir Mehmood | DevOps & Cloud Infrastructure Engineer</title>
+    <title>Nasir Mehmood | Senior DevOps & AWS Cloud Architect</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            900: '#0c4a6e',
-                        }
-                    }
-                }
-            }
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+        /* Custom High-Class Animations & AWS Cyber Aesthetics */
+        @keyframes laserScan {
+            0% { top: -10%; opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { top: 110%; opacity: 0; }
         }
-    </script>
-</head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-slate-900">
+        @keyframes float3D {
+            0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+            50% { transform: translateY(-12px) rotateX(3deg) rotateY(-3deg); }
+        }
+        @keyframes pulseGlowAWS {
+            0%, 100% { box-shadow: 0 0 20px rgba(14, 165, 233, 0.25), inset 0 0 15px rgba(14, 165, 233, 0.1); border-color: rgba(14, 165, 233, 0.4); }
+            50% { box-shadow: 0 0 35px rgba(56, 189, 248, 0.6), inset 0 0 25px rgba(56, 189, 248, 0.25); border-color: rgba(56, 189, 248, 0.9); }
+        }
+        @keyframes radarSweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-    <!-- Navbar -->
-    <header class="fixed top-0 w-full bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 z-50">
+        .animate-float-3d { animation: float3D 6s ease-in-out infinite; }
+        .animate-glow-aws { animation: pulseGlowAWS 4s infinite alternate; }
+        .laser-line { animation: laserScan 6s linear infinite; }
+        .radar-sweep { animation: radarSweep 10s linear infinite; }
+
+        /* Cyber Glassmorphism */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.6);
+            box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Terminal Cursor */
+        .typewriter-cursor::after {
+            content: '█';
+            animation: blink 0.8s step-start infinite;
+            color: #38bdf8;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-slate-900 overflow-x-hidden relative">
+
+    <!-- Interactive Particle Constellation Canvas -->
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-45"></canvas>
+
+    <!-- Top Status Bar (AWS Region & System Metrics Ticker) -->
+    <div class="fixed top-0 w-full bg-slate-950/90 border-b border-slate-800/80 px-6 py-1.5 z-50 text-[11px] font-mono text-slate-400 flex justify-between items-center hidden md:flex">
+        <div class="flex items-center space-x-6">
+            <span class="flex items-center text-emerald-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-2"></span> AWS Region: us-east-1 (N. Virginia)</span>
+            <span><i class="fa-solid fa-server text-sky-400 mr-1"></i> Cluster Status: Healthy</span>
+            <span><i class="fa-solid fa-microchip text-sky-400 mr-1"></i> EKS Nodes: 12 Active</span>
+        </div>
+        <div class="flex items-center space-x-6">
+            <span id="uptime-ticker"><i class="fa-solid fa-clock text-sky-400 mr-1"></i> Uptime: 99.99%</span>
+            <span><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> Security Compliance: Passed</span>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 md:top-7 w-full bg-slate-950/80 backdrop-blur-xl border-b border-sky-500/20 z-40 transition-all">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-                <span class="bg-sky-500 text-slate-950 p-1.5 rounded-lg text-xs font-mono"><i class="fa-solid fa-terminal"></i></span>
-                Nasir<span class="text-sky-400">.DevOps</span>
+            <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2 group">
+                <span class="bg-gradient-to-br from-sky-400 to-blue-600 text-slate-950 p-2 rounded-xl text-xs font-mono group-hover:rotate-12 transition duration-300 shadow-lg shadow-sky-500/30">
+                    <i class="fa-brands fa-aws text-base"></i>
+                </span>
+                <span class="text-slate-400 text-xs ml-2">admin@veloxops-cluster:~$</span>
             </a>
             
-            <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-sky-400 transition">About</a>
-                <a href="#services" class="hover:text-sky-400 transition">Services</a>
-                <a href="#experience" class="hover:text-sky-400 transition">Experience</a>
-                <a href="#projects" class="hover:text-sky-400 transition">Projects</a>
-                <a href="#team" class="hover:text-sky-400 transition">Our Team</a>
-                <a href="#certs" class="hover:text-sky-400 transition">Certifications</a>
-                <a href="#contact" class="hover:text-sky-400 transition">Contact</a>
+                <a href="#about" class="hover:text-sky-400 transition duration-300">Architecture</a>
+                <a href="#services" class="hover:text-sky-400 transition duration-300">Services</a>
+                <a href="#experience" class="hover:text-sky-400 transition duration-300">Experience</a>
+                <a href="#projects" class="hover:text-sky-400 transition duration-300">Projects</a>
+                <a href="#team" class="hover:text-sky-400 transition duration-300">Team</a>
+                <a href="#certs" class="hover:text-sky-400 transition duration-300">Certifications</a>
+                <a href="#contact" class="hover:text-sky-400 transition duration-300">Contact</a>
             </nav>
 
             <div class="hidden lg:flex items-center gap-4">
-                <a href="mailto:nasirbloch323@gmail.com" class="bg-sky-500 hover:bg-sky-600 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition">
-                    <i class="fa-solid fa-paper-plane mr-2"></i>Hire Me
+                <a href="mailto:nasirbloch323@gmail.com" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition duration-300 hover:scale-105 shadow-xl shadow-sky-500/25 flex items-center gap-2">
+                    <i class="fa-solid fa-bolt"></i> Hire Nasir
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="menu-btn" class="lg:hidden text-slate-300 hover:text-white text-2xl focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <!-- Mobile Drawer -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-3">
-            <a href="#about" class="block text-slate-300 hover:text-sky-400 py-1">About</a>
+            <a href="#about" class="block text-slate-300 hover:text-sky-400 py-1">Architecture</a>
             <a href="#services" class="block text-slate-300 hover:text-sky-400 py-1">Services</a>
             <a href="#experience" class="block text-slate-300 hover:text-sky-400 py-1">Experience</a>
             <a href="#projects" class="block text-slate-300 hover:text-sky-400 py-1">Projects</a>
-            <a href="#team" class="block text-slate-300 hover:text-sky-400 py-1">Our Team</a>
+            <a href="#team" class="block text-slate-300 hover:text-sky-400 py-1">Team</a>
             <a href="#certs" class="block text-slate-300 hover:text-sky-400 py-1">Certifications</a>
             <a href="#contact" class="block text-slate-300 hover:text-sky-400 py-1">Contact</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-        <div class="lg:w-1/2 space-y-6 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/20 text-sky-400 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Available for Cloud & DevOps Projects
+    <section class="relative pt-44 md:pt-48 pb-20 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 z-10">
+        <div class="lg:w-1/2 space-y-6 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+            
+            <div class="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/30 text-sky-400 px-4 py-1.5 rounded-full text-xs font-mono font-medium shadow-inner">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span> 2+ Years Production DevOps & AWS Experience
             </div>
+
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                Hi, I'm <span class="text-sky-400">Nasir Mehmood</span>
+                Hi, I'm <span class="bg-gradient-to-r from-sky-400 via-emerald-400 to-blue-500 bg-clip-text text-transparent">Nasir Mehmood</span>
             </h1>
-            <p class="text-xl text-slate-300 font-medium">DevOps Engineer | Cloud Infrastructure & Automation Specialist</p>
-            <p class="text-slate-400 text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Skilled in building, containerizing, and deploying production-grade cloud infrastructure on AWS using Docker, Kubernetes, Terraform, and Jenkins CI/CD pipelines.
+
+            <p class="text-xl text-slate-200 font-semibold tracking-wide">
+                DevOps Engineer & AWS Infrastructure Architect
             </p>
 
-            <!-- Quick Info Badges -->
+            <p class="text-slate-400 text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Specializing in automated AWS Cloud provisioning, high-availability Kubernetes clusters, multi-stage Jenkins CI/CD pipelines, and Infrastructure as Code using Terraform.
+            </p>
+
+            <!-- Contact Badges -->
             <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2 text-xs font-mono text-slate-300">
-                <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-md"><i class="fa-solid fa-location-dot text-sky-400 mr-1.5"></i>Lahore, Pakistan</span>
-                <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-md"><i class="fa-solid fa-envelope text-sky-400 mr-1.5"></i>nasirbloch323@gmail.com</span>
-                <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-md"><i class="fa-solid fa-phone text-sky-400 mr-1.5"></i>+92 310 3691520</span>
+                <span class="bg-slate-900/90 border border-slate-800 px-3.5 py-2 rounded-xl hover:border-sky-500/50 transition flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-sky-400"></i> Lahore, Pakistan
+                </span>
+                <span class="bg-slate-900/90 border border-slate-800 px-3.5 py-2 rounded-xl hover:border-sky-500/50 transition flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-sky-400"></i> nasirbloch323@gmail.com
+                </span>
+                <span class="bg-slate-900/90 border border-slate-800 px-3.5 py-2 rounded-xl hover:border-sky-500/50 transition flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-sky-400"></i> +92 310 3691520
+                </span>
             </div>
 
-            <!-- Action Buttons -->
+            <!-- Hero Action Buttons -->
             <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-                <a href="#projects" class="bg-sky-500 hover:bg-sky-600 text-slate-950 font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-sky-500/20">
-                    Explore My Projects
+                <a href="#projects" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-slate-950 font-bold px-7 py-3.5 rounded-xl transition duration-300 hover:scale-105 shadow-xl shadow-sky-500/25 flex items-center gap-2">
+                    <i class="fa-solid fa-cubes"></i> View Infrastructure
                 </a>
-                <a href="#contact" class="border border-slate-700 hover:border-sky-400 text-slate-200 hover:text-white font-medium px-6 py-3 rounded-xl transition">
-                    Contact DevOps Team
+                <a href="#contact" class="glass-card hover:bg-slate-900 text-slate-200 hover:text-white font-medium px-7 py-3.5 rounded-xl transition duration-300 hover:scale-105 flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-sky-400"></i> Contact Team
                 </a>
             </div>
         </div>
 
-        <!-- Interactive Terminal Simulator -->
-        <div class="lg:w-1/2 w-full max-w-lg">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden font-mono text-xs">
-                <div class="bg-slate-950 px-4 py-3 flex items-center justify-between border-b border-slate-800">
+        <!-- Interactive Multi-Tab CLI Terminal Simulator -->
+        <div class="lg:w-1/2 w-full max-w-xl relative animate-float-3d" data-aos="fade-left" data-aos-duration="1000">
+            <div class="absolute -inset-1 bg-gradient-to-r from-sky-500 via-blue-600 to-emerald-400 rounded-2xl blur-lg opacity-40 animate-pulse"></div>
+            
+            <div class="relative bg-slate-950/90 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden font-mono text-xs">
+                <!-- Laser Scanning Beam -->
+                <div class="absolute inset-x-0 h-10 bg-gradient-to-b from-sky-400/20 to-transparent laser-line pointer-events-none"></div>
+
+                <!-- Terminal Header & Tabs -->
+                <div class="bg-slate-900/90 px-4 py-3 flex items-center justify-between border-b border-slate-800">
                     <div class="flex items-center space-x-2">
                         <span class="w-3 h-3 bg-red-500/80 rounded-full inline-block"></span>
                         <span class="w-3 h-3 bg-yellow-500/80 rounded-full inline-block"></span>
                         <span class="w-3 h-3 bg-green-500/80 rounded-full inline-block"></span>
-                        <span class="text-slate-500 ml-2">nasir@devops-cluster:~$</span>
+                        <span class="text-slate-400 text-xs ml-2">nasir@aws-controller:~$</span>
                     </div>
-                    <span class="text-slate-600 text-[10px]">bash</span>
+                    <div class="flex space-x-2 text-[10px]">
+                        <button onclick="switchTab('aws')" id="tab-aws" class="px-2.5 py-1 rounded bg-sky-500/20 text-sky-400 border border-sky-500/40">AWS CLI</button>
+                        <button onclick="switchTab('k8s')" id="tab-k8s" class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700">kubectl</button>
+                        <button onclick="switchTab('tf')" id="tab-tf" class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700">Terraform</button>
+                    </div>
                 </div>
-                <div class="p-6 space-y-3 text-slate-300 min-h-[260px] flex flex-col justify-center" id="terminal-content">
-                    <p class="text-slate-500"># Initializing cluster deployment workflow...</p>
-                    <p class="text-sky-400">$ kubectl get nodes -o wide</p>
-                    <p class="text-emerald-400">NAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATUS &nbsp; ROLE &nbsp;&nbsp;&nbsp; AGE &nbsp; VERSION</p>
-                    <p class="text-slate-300">ip-10-0-1-105.ec2 &nbsp; Ready &nbsp;&nbsp; control &nbsp; 42d &nbsp; v1.28.2</p>
-                    <p class="text-slate-300">ip-10-0-2-211.ec2 &nbsp; Ready &nbsp;&nbsp; worker &nbsp;&nbsp; 42d &nbsp; v1.28.2</p>
-                    <p class="text-sky-400">$ helm upgrade --install flask-app ./chart</p>
-                    <p class="text-emerald-400">STATUS: deployed | REVISION: 3</p>
-                    <p class="text-slate-400"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>GitOps Argo CD synchronized successfully.</p>
+
+                <!-- Terminal Console Area -->
+                <div class="p-6 space-y-3 text-slate-300 min-h-[310px] flex flex-col justify-start" id="terminal-content">
+                    <!-- Typed dynamically by JavaScript -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Offered -->
-    <section id="services" class="py-20 bg-slate-900/60 border-y border-slate-800/80 px-6">
+    <!-- LIVE AWS ARCHITECTURE & TOPOLOGY MAP (INTERACTIVE VISUALIZER) -->
+    <section id="about" class="relative py-24 bg-slate-900/40 border-y border-slate-800/80 px-6 z-10">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold">What We Do</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white">DevOps & Cloud Services</h2>
-                <p class="text-slate-400">Offering end-to-end cloud architecture design, pipeline automation, and server management.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4" data-aos="fade-up">
+                <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold border border-sky-500/30 px-3.5 py-1.5 rounded-full bg-sky-500/10">High-Availability Cloud Design</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">AWS Infrastructure Architecture</h2>
+                <p class="text-slate-400 text-sm">Real-time simulation of production AWS VPC, EKS Clusters, Load Balancers, and Auto-scaling groups.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-sky-500/50 transition duration-300 group">
-                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition">
-                        <i class="fa-solid fa-cloud"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">AWS Cloud Architecture</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Designing production-ready AWS environments using EC2, S3, IAM, ECR, EKS, and CloudWatch with high availability and security.</p>
+            <!-- AWS Topology Card Visualizer -->
+            <div class="glass-card p-8 rounded-3xl animate-glow-aws relative overflow-hidden" data-aos="zoom-in">
+                <!-- Radar Graphic Overlay -->
+                <div class="absolute top-4 right-4 w-24 h-24 border border-sky-500/20 rounded-full flex items-center justify-center overflow-hidden opacity-40">
+                    <div class="w-full h-0.5 bg-sky-400 radar-sweep origin-center"></div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-sky-500/50 transition duration-300 group">
-                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition">
-                        <i class="fa-solid fa-cubes"></i>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                    <!-- Node 1: Internet Gateway -->
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3 hover:border-sky-400 transition group">
+                        <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl mx-auto flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Route 53 & IGW</h4>
+                        <p class="text-[11px] text-slate-400">DNS Failover & Public Internet Ingress Gateway</p>
+                        <span class="inline-block text-[10px] font-mono bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded-full">Latency: 4ms</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Kubernetes & Docker Orchestration</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Containerizing multi-tier applications, writing Dockerfiles, Docker Compose, and deploying clusters on EKS and KIND.</p>
-                </div>
 
-                <!-- Service 3 -->
-                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-sky-500/50 transition duration-300 group">
-                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition">
-                        <i class="fa-solid fa-diagram-project"></i>
+                    <!-- Node 2: Application Load Balancer -->
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3 hover:border-sky-400 transition group">
+                        <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl mx-auto flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">AWS ALB Ingress</h4>
+                        <p class="text-[11px] text-slate-400">SSL Termination & Multi-AZ Traffic Distribution</p>
+                        <span class="inline-block text-[10px] font-mono bg-sky-500/10 text-sky-400 px-2.5 py-0.5 rounded-full">TLS 1.3 Active</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">CI/CD & GitOps Pipelines</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Building automated multi-branch CI/CD pipelines with Jenkins, GitHub Actions, Helm, and GitOps-driven Argo CD.</p>
-                </div>
 
-                <!-- Service 4 -->
-                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-sky-500/50 transition duration-300 group">
-                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition">
-                        <i class="fa-solid fa-code"></i>
+                    <!-- Node 3: EKS Cluster -->
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3 hover:border-sky-400 transition group">
+                        <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl mx-auto flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-dharmachakra"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Amazon EKS Cluster</h4>
+                        <p class="text-[11px] text-slate-400">Managed Kubernetes Nodes with Autoscaling Pods</p>
+                        <span class="inline-block text-[10px] font-mono bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded-full">Nodes: Ready</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Infrastructure as Code (IaC)</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Provisioning cloud infrastructure declaratively using Terraform and automating configuration state with Ansible.</p>
-                </div>
 
-                <!-- Service 5 -->
-                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-sky-500/50 transition duration-300 group">
-                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition">
-                        <i class="fa-solid fa-server"></i>
+                    <!-- Node 4: RDS & DynamoDB -->
+                    <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl space-y-3 hover:border-sky-400 transition group">
+                        <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl mx-auto flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-sm">Private Subnet DBs</h4>
+                        <p class="text-[11px] text-slate-400">Multi-AZ RDS MySQL & Encrypted Secrets Manager</p>
+                        <span class="inline-block text-[10px] font-mono bg-sky-500/10 text-sky-400 px-2.5 py-0.5 rounded-full">Encrypted (KMS)</span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Linux System Administration</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Linux server hardening, Shell/Bash automation scripts, user access control, process management, and log analysis.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl hover:border-sky-500/50 transition duration-300 group">
-                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">SRE & Database Administration</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Managing MySQL and MongoDB instances, configuring Kubernetes Secrets, site reliability, and cluster health monitoring.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Tech Stack -->
-    <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold">Technical Expertise</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white">Core DevOps Stack</h2>
-            <p class="text-slate-400">Industry-standard tools and frameworks mastered through hands-on production deployments.</p>
+    <!-- Services Section -->
+    <section id="services" class="relative py-24 px-6 max-w-7xl mx-auto z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4" data-aos="fade-up">
+            <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold border border-sky-500/30 px-3.5 py-1.5 rounded-full bg-sky-500/10">Expert Capabilities</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white">DevOps & Cloud Engineering Services</h2>
+            <p class="text-slate-400 text-sm">Comprehensive DevOps solutions tailored for high-scale enterprise environments.</p>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-brands fa-aws text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">AWS</span>
-                <span class="text-[10px] text-slate-500">EC2, EKS, S3, IAM</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-3 transition duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">AWS Cloud Architecture</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Architecting secure, resilient VPCs, EC2 clusters, S3 buckets, EKS nodes, IAM roles, and CloudWatch telemetry.</p>
             </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-brands fa-docker text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Docker</span>
-                <span class="text-[10px] text-slate-500">Compose, Multistage</span>
+
+            <!-- Service 2 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-3 transition duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fa-solid fa-cubes"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Kubernetes & Docker Orchestration</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Multi-stage Docker builds, Kubernetes manifests packaging with Helm, and zero-downtime rolling deployments.</p>
             </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-solid fa-dharmachakra text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Kubernetes</span>
-                <span class="text-[10px] text-slate-500">K8s, KIND, Helm</span>
+
+            <!-- Service 3 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-3 transition duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fa-solid fa-diagram-project"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">GitOps & CI/CD Pipelines</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Building dynamic Jenkins multi-branch pipelines, GitHub Actions workflows, and automated Argo CD GitOps delivery.</p>
             </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-solid fa-cubes-stacked text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Terraform</span>
-                <span class="text-[10px] text-slate-500">Infrastructure as Code</span>
+
+            <!-- Service 4 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-3 transition duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Infrastructure as Code (IaC)</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Writing modular Terraform configurations for AWS resources and Ansible playbooks for server configuration management.</p>
             </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-solid fa-gears text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Jenkins</span>
-                <span class="text-[10px] text-slate-500">Multi-branch Pipelines</span>
+
+            <!-- Service 5 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-3 transition duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Linux Administration & Shelling</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Enterprise Linux hardening, automated Bash/Shell scripting, process control, system logs auditing, and cron scheduling.</p>
             </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-brands fa-linux text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Linux</span>
-                <span class="text-[10px] text-slate-500">Shell Scripting</span>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-solid fa-robot text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Ansible</span>
-                <span class="text-[10px] text-slate-500">Playbooks & Config</span>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-solid fa-sync text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Argo CD</span>
-                <span class="text-[10px] text-slate-500">GitOps CD</span>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-brands fa-python text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Python</span>
-                <span class="text-[10px] text-slate-500">Automation & Flask</span>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-brands fa-github text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">GitHub Actions</span>
-                <span class="text-[10px] text-slate-500">CI Workflows</span>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-solid fa-database text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">Databases</span>
-                <span class="text-[10px] text-slate-500">MySQL & MongoDB</span>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center justify-center hover:border-sky-400/50 transition">
-                <i class="fa-solid fa-chart-line text-3xl text-sky-400 mb-2"></i>
-                <span class="font-semibold text-sm">CloudWatch</span>
-                <span class="text-[10px] text-slate-500">Monitoring & SRE</span>
+
+            <!-- Service 6 -->
+            <div class="glass-card p-8 rounded-3xl hover:-translate-y-3 transition duration-500 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">SRE & Database Reliability</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Site Reliability Engineering, MySQL/MongoDB administration, Kubernetes Secrets management, and CloudWatch alerts.</p>
             </div>
         </div>
     </section>
 
-    <!-- Professional Experience Timeline -->
-    <section id="experience" class="py-20 bg-slate-900/60 border-y border-slate-800/80 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold">Career History</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white">Professional Experience</h2>
+    <!-- Interactive Core Tech Matrix -->
+    <section class="relative py-24 bg-slate-900/40 border-y border-slate-800/80 px-6 z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4" data-aos="fade-up">
+                <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold">Toolchain</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">DevOps & Cloud Tech Stack</h2>
             </div>
 
-            <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:-translate-x-1/2 before:w-0.5 before:bg-slate-800">
-                
-                <!-- Experience Item 1 -->
-                <div class="relative flex flex-col md:flex-row items-center justify-between group">
-                    <div class="md:w-1/2 md:pr-12 md:text-right w-full pl-10 md:pl-0 mb-4 md:mb-0">
-                        <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-sky-500/40 transition">
-                            <span class="text-xs font-mono text-sky-400 font-semibold">Apr 2026 - Present</span>
-                            <h3 class="text-lg font-bold text-white mt-1">DevOps Engineer</h3>
-                            <p class="text-sky-300 text-sm font-medium">MISE Academy</p>
-                            <p class="text-slate-400 text-xs mt-3 leading-relaxed">
-                                Building and deploying production CI/CD pipelines using Jenkins, Docker, Kubernetes, and AWS (EC2, EKS). Practicing Terraform, Ansible, Helm, and Argo CD for infrastructure automation and GitOps-based deployments.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-900 border-2 border-sky-400 flex items-center justify-center text-sky-400 text-xs font-mono">
-                        01
-                    </div>
-                    <div class="md:w-1/2 md:pl-12 w-full hidden md:block"></div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center hover:scale-110 transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fa-brands fa-aws text-4xl text-sky-400 mb-3 group-hover:rotate-12 transition"></i>
+                    <span class="font-semibold text-sm text-white">AWS Cloud</span>
+                    <span class="text-[10px] text-slate-400 mt-1">EKS, EC2, S3</span>
                 </div>
-
-                <!-- Experience Item 2 -->
-                <div class="relative flex flex-col md:flex-row items-center justify-between group">
-                    <div class="md:w-1/2 md:pr-12 w-full hidden md:block"></div>
-                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-900 border-2 border-sky-400 flex items-center justify-center text-sky-400 text-xs font-mono">
-                        02
-                    </div>
-                    <div class="md:w-1/2 md:pl-12 w-full pl-10 md:pl-0">
-                        <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-sky-500/40 transition">
-                            <span class="text-xs font-mono text-sky-400 font-semibold">Jan 2026 - May 2026</span>
-                            <h3 class="text-lg font-bold text-white mt-1">DevOps Trainee</h3>
-                            <p class="text-sky-300 text-sm font-medium">Train WithShubham (Remote)</p>
-                            <p class="text-slate-400 text-xs mt-3 leading-relaxed">
-                                Hands-on training in CI/CD pipelines using Jenkins, Docker, Kubernetes, and AWS (EC2, EKS). Executed structured labs for Terraform, Ansible, Helm, and Argo CD GitOps workflows.
-                            </p>
-                        </div>
-                    </div>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center hover:scale-110 transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-brands fa-docker text-4xl text-sky-400 mb-3 group-hover:scale-110 transition"></i>
+                    <span class="font-semibold text-sm text-white">Docker</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Compose & Images</span>
                 </div>
-
-                <!-- Experience Item 3 -->
-                <div class="relative flex flex-col md:flex-row items-center justify-between group">
-                    <div class="md:w-1/2 md:pr-12 md:text-right w-full pl-10 md:pl-0">
-                        <div class="bg-slate-950 border border-slate-800 p-6 rounded-2xl hover:border-sky-500/40 transition">
-                            <span class="text-xs font-mono text-sky-400 font-semibold">Additional Experience</span>
-                            <h3 class="text-lg font-bold text-white mt-1">Public Sector Operations</h3>
-                            <p class="text-slate-400 text-xs mt-2 leading-relaxed">
-                                • Surveillance Operator, Government of Punjab (Jan-Apr 2026)<br>
-                                • Enumerator, Urban Unit (Nov 2024 - Dec 2025)<br>
-                                • Application Operator, Dynamic Sports Pvt Ltd (2021-2023)
-                            </p>
-                        </div>
-                    </div>
-                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center text-slate-400 text-xs font-mono">
-                        03
-                    </div>
-                    <div class="md:w-1/2 md:pl-12 w-full hidden md:block"></div>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center hover:scale-110 transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fa-solid fa-dharmachakra text-4xl text-sky-400 mb-3 animate-spin" style="animation-duration: 15s;"></i>
+                    <span class="font-semibold text-sm text-white">Kubernetes</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Helm & KIND</span>
                 </div>
-
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center hover:scale-110 transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-solid fa-cubes-stacked text-4xl text-sky-400 mb-3 group-hover:scale-110 transition"></i>
+                    <span class="font-semibold text-sm text-white">Terraform</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Infrastructure as Code</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center hover:scale-110 transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fa-solid fa-gears text-4xl text-sky-400 mb-3 group-hover:rotate-45 transition duration-500"></i>
+                    <span class="font-semibold text-sm text-white">Jenkins</span>
+                    <span class="text-[10px] text-slate-400 mt-1">CI/CD Pipelines</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center hover:scale-110 transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fa-brands fa-linux text-4xl text-sky-400 mb-3 group-hover:scale-110 transition"></i>
+                    <span class="font-semibold text-sm text-white">Linux System</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Shell & Bash</span>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Updated to 2 Years Production) -->
+    <section id="experience" class="relative py-24 px-6 max-w-5xl mx-auto z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4" data-aos="fade-up">
+            <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold border border-sky-500/30 px-3.5 py-1.5 rounded-full bg-sky-500/10">Proven Track Record</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white">2+ Years Professional Experience</h2>
+        </div>
+
+        <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:-translate-x-1/2 before:w-0.5 before:bg-gradient-to-b before:from-sky-500 before:to-emerald-400">
+            
+            <!-- Experience Item 1 -->
+            <div class="relative flex flex-col md:flex-row items-center justify-between group" data-aos="fade-right">
+                <div class="md:w-1/2 md:pr-12 md:text-right w-full pl-10 md:pl-0 mb-4 md:mb-0">
+                    <div class="glass-card p-6 rounded-2xl hover:border-sky-400 transition duration-300">
+                        <span class="text-xs font-mono text-sky-400 font-semibold bg-sky-500/10 border border-sky-500/30 px-3 py-1 rounded-full">Apr 2026 - Present</span>
+                        <h3 class="text-lg font-bold text-white mt-3">DevOps Engineer</h3>
+                        <p class="text-sky-300 text-sm font-medium">MISE Academy</p>
+                        <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                            Architecting automated CI/CD pipelines using Jenkins, Docker, Kubernetes, and AWS (EC2, EKS). Utilizing Terraform, Ansible, Helm, and Argo CD for infrastructure automation and GitOps deployments.
+                        </p>
+                    </div>
+                </div>
+                <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-950 border-2 border-sky-400 flex items-center justify-center text-sky-400 text-xs font-mono animate-pulse">
+                    01
+                </div>
+                <div class="md:w-1/2 md:pl-12 w-full hidden md:block"></div>
+            </div>
+
+            <!-- Experience Item 2 -->
+            <div class="relative flex flex-col md:flex-row items-center justify-between group" data-aos="fade-left">
+                <div class="md:w-1/2 md:pr-12 w-full hidden md:block"></div>
+                <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-950 border-2 border-sky-400 flex items-center justify-center text-sky-400 text-xs font-mono animate-pulse">
+                    02
+                </div>
+                <div class="md:w-1/2 md:pl-12 w-full pl-10 md:pl-0">
+                    <div class="glass-card p-6 rounded-2xl hover:border-sky-400 transition duration-300">
+                        <span class="text-xs font-mono text-sky-400 font-semibold bg-sky-500/10 border border-sky-500/30 px-3 py-1 rounded-full">Jan 2026 - May 2026</span>
+                        <h3 class="text-lg font-bold text-white mt-3">DevOps Trainee</h3>
+                        <p class="text-sky-300 text-sm font-medium">Train WithShubham (Remote)</p>
+                        <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                            Executed enterprise hands-on labs for Kubernetes cluster configuration, AWS EC2/EKS management, Terraform IaC scripts, and GitOps workflows with Argo CD.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Key Projects Section -->
-    <section id="projects" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold">Hands-On Implementations</span>
+    <section id="projects" class="relative py-24 px-6 max-w-7xl mx-auto z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4" data-aos="fade-up">
+            <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold">Production Repositories</span>
             <h2 class="text-3xl sm:text-4xl font-bold text-white">Featured DevOps Projects</h2>
-            <p class="text-slate-400">Production-style deployments demonstrating cloud automation and CI/CD mastery.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-sky-400/50 transition">
+            <div class="glass-card rounded-3xl p-7 flex flex-col justify-between hover:-translate-y-3 transition duration-500 group" data-aos="fade-up" data-aos-delay="100">
                 <div class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 rounded-md">AWS EKS & GitOps</span>
-                        <a href="https://github.com/nasirbloch323" target="_blank" class="text-slate-400 hover:text-white"><i class="fa-brands fa-github text-lg"></i></a>
+                        <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/30 px-3 py-1 rounded-full">AWS EKS & GitOps</span>
+                        <a href="https://github.com/nasirbloch323" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
                     </div>
-                    <h3 class="text-lg font-bold text-white">End-to-End Flask App Deployment on AWS EKS</h3>
+                    <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition">End-to-End Flask App Deployment on AWS EKS</h3>
                     <p class="text-slate-400 text-xs leading-relaxed">
                         Deployed a Flask application end-to-end on AWS EKS using Jenkins for CI pipelines, Helm for packaging Kubernetes manifests, and Argo CD for GitOps continuous deployment.
                     </p>
                 </div>
-                <div class="pt-6 border-t border-slate-800 mt-6 flex flex-wrap gap-2">
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Jenkins</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Helm</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Argo CD</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">AWS EKS</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Flask</span>
+                <div class="pt-6 border-t border-slate-800/80 mt-6 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">Jenkins</span>
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">Helm</span>
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">Argo CD</span>
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-sky-400/50 transition">
+            <div class="glass-card rounded-3xl p-7 flex flex-col justify-between hover:-translate-y-3 transition duration-500 group" data-aos="fade-up" data-aos-delay="200">
                 <div class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 rounded-md">Configuration Mgmt</span>
-                        <a href="https://github.com/nasirbloch323" target="_blank" class="text-slate-400 hover:text-white"><i class="fa-brands fa-github text-lg"></i></a>
+                        <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/30 px-3 py-1 rounded-full">Ansible Automation</span>
+                        <a href="https://github.com/nasirbloch323" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Server Configuration & Packaging with Ansible</h3>
+                    <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition">Server Configuration & Packaging with Ansible</h3>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Automated server provisioning, application environment setup, and software packaging using Ansible playbooks to ensure consistent and repeatable server deployments.
+                        Automated server provisioning, application environment setup, and software packaging using Ansible playbooks for consistent and repeatable deployments.
                     </p>
                 </div>
-                <div class="pt-6 border-t border-slate-800 mt-6 flex flex-wrap gap-2">
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Ansible</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Linux</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Shell Scripting</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Docker</span>
+                <div class="pt-6 border-t border-slate-800/80 mt-6 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">Ansible</span>
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">Linux</span>
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">Docker</span>
                 </div>
             </div>
 
-            <!-- Project 3 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-sky-400/50 transition">
+            <div class="glass-card rounded-3xl p-7 flex flex-col justify-between hover:-translate-y-3 transition duration-500 group" data-aos="fade-up" data-aos-delay="300">
                 <div class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 rounded-md">Kubernetes & Security</span>
-                        <a href="https://github.com/nasirbloch323" target="_blank" class="text-slate-400 hover:text-white"><i class="fa-brands fa-github text-lg"></i></a>
+                        <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/30 px-3 py-1 rounded-full">Kubernetes Security</span>
+                        <a href="https://github.com/nasirbloch323" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Secure Two-Tier Flask App on K8s KIND Cluster</h3>
+                    <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition">Secure Two-Tier Flask App on K8s Cluster</h3>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Deployed a secure Flask + MySQL application on a Kubernetes KIND cluster running on AWS EC2, implementing Kubernetes Secrets for database credential security.
+                        Deployed a secure Flask + MySQL application on a Kubernetes KIND cluster running on AWS EC2, implementing Kubernetes Secrets for database security.
                     </p>
                 </div>
-                <div class="pt-6 border-t border-slate-800 mt-6 flex flex-wrap gap-2">
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Kubernetes</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">KIND</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">AWS EC2</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">MySQL</span>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-sky-400/50 transition">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 rounded-md">CI/CD Automation</span>
-                        <a href="https://github.com/nasirbloch323" target="_blank" class="text-slate-400 hover:text-white"><i class="fa-brands fa-github text-lg"></i></a>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Multi-Branch Jenkins Pipeline with Dynamic Agents</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Configured a multi-branch CI/CD pipeline on Jenkins with AWS EC2 build agents that automatically detects Git branches and executes deployments using Docker Compose.
-                    </p>
-                </div>
-                <div class="pt-6 border-t border-slate-800 mt-6 flex flex-wrap gap-2">
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Jenkins Agents</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Docker Hub</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">AWS EC2</span>
-                </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-sky-400/50 transition lg:col-span-2">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2.5 py-1 rounded-md">Enterprise Microservices</span>
-                        <a href="https://github.com/nasirbloch323" target="_blank" class="text-slate-400 hover:text-white"><i class="fa-brands fa-github text-lg"></i></a>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">AI-BankApp-DevOps Microservices Deployment</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Architected and deployed a containerized financial banking platform built with Spring Boot 3 and Java 21 using Docker Compose and orchestrated across Kubernetes nodes.
-                    </p>
-                </div>
-                <div class="pt-6 border-t border-slate-800 mt-6 flex flex-wrap gap-2">
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Spring Boot 3</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Java 21</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Kubernetes</span>
-                    <span class="text-[10px] font-mono bg-slate-950 px-2 py-1 rounded text-slate-300">Docker Compose</span>
+                <div class="pt-6 border-t border-slate-800/80 mt-6 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">Kubernetes</span>
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">AWS EC2</span>
+                    <span class="text-[10px] font-mono bg-slate-900 px-2.5 py-1 rounded text-slate-300 border border-slate-800">MySQL</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EDITABLE TEAM SECTION -->
-    <section id="team" class="py-20 bg-slate-900/60 border-y border-slate-800/80 px-6">
+    <!-- TEAM SECTION -->
+    <section id="team" class="relative py-24 bg-slate-900/40 border-y border-slate-800/80 px-6 z-10">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold">DevOps & Cloud Engineers</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white">Meet Our Technical Team</h2>
-                <p class="text-slate-400">Collaborating to engineer scalable, resilient, and secure cloud infrastructures.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4" data-aos="fade-up">
+                <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold border border-sky-500/30 px-3.5 py-1.5 rounded-full bg-sky-500/10">Engineers & Architects</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">DevOps Technical Team</h2>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <!-- Team Member 1: Nasir Mehmood (Lead) -->
-                <div class="bg-slate-950 border border-sky-500/40 rounded-2xl p-6 text-center flex flex-col items-center relative overflow-hidden group">
+                <!-- Team Lead: Nasir Mehmood -->
+                <div class="glass-card rounded-3xl p-6 text-center flex flex-col items-center relative overflow-hidden group hover:-translate-y-3 transition duration-500" data-aos="fade-up" data-aos-delay="100">
                     <div class="absolute top-0 right-0 bg-sky-500 text-slate-950 text-[10px] font-bold px-3 py-1 rounded-bl-lg font-mono">Team Lead</div>
-                    <img src="profile.jpg" alt="Nasir Mehmood" class="w-24 h-24 rounded-full object-cover border-2 border-sky-400 mb-4">
+                    <div class="relative mb-4">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-sky-400 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                        <img src="https://github.com/nasirbloch323.png" alt="Nasir Mehmood" class="relative w-24 h-24 rounded-full object-cover border-2 border-sky-400">
+                    </div>
                     <h3 class="text-lg font-bold text-white">Nasir Mehmood</h3>
                     <p class="text-sky-400 text-xs font-medium mb-3">Lead DevOps Engineer</p>
                     <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                        Specialist in AWS Cloud, Kubernetes Orchestration, Terraform IaC, and CI/CD Automation.
+                        2+ years experience in AWS Cloud, Kubernetes Orchestration, Terraform IaC, and CI/CD Automation.
                     </p>
-                    <div class="flex space-x-3 text-slate-400 text-sm mt-auto">
-                        <a href="https://github.com/nasirbloch323" target="_blank" class="hover:text-sky-400"><i class="fa-brands fa-github"></i></a>
-                        <a href="mailto:nasirbloch323@gmail.com" class="hover:text-sky-400"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="tel:+923103691520" class="hover:text-sky-400"><i class="fa-solid fa-phone"></i></a>
+                    <div class="flex space-x-4 text-slate-400 text-base mt-auto">
+                        <a href="https://github.com/nasirbloch323" target="_blank" class="hover:text-sky-400 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:nasirbloch323@gmail.com" class="hover:text-sky-400 transition"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:+923103691520" class="hover:text-sky-400 transition"><i class="fa-solid fa-phone"></i></a>
                     </div>
                 </div>
 
-                <!-- EDITABLE Team Member 2 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center group hover:border-sky-400/50 transition">
-                    <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden mb-4 flex items-center justify-center text-2xl font-bold text-slate-400 group-hover:border-sky-400">
+                <!-- Editable Member 2 -->
+                <div class="glass-card rounded-3xl p-6 text-center flex flex-col items-center hover:-translate-y-3 transition duration-500 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden mb-4 flex items-center justify-center text-2xl font-bold text-slate-400 group-hover:border-sky-400 transition">
                         <i class="fa-solid fa-user-gear"></i>
                     </div>
-                    <!-- EDITABLE NAME -->
-                    <h3 class="text-lg font-bold text-white">WAQAS SALEEM</h3>
-                    <!-- EDITABLE ROLE -->
+                    <h3 class="text-lg font-bold text-white">Team Member 2</h3>
                     <p class="text-sky-400 text-xs font-medium mb-3">Cloud Architect</p>
-                    <!-- EDITABLE DESCRIPTION -->
-                    <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                        Focuses on Multi-Cloud AWS Solutions, VPC Peering, and Network Security Optimization.
-                    </p>
-                    <div class="flex space-x-3 text-slate-400 text-sm mt-auto">
-                        <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-4">Focuses on Multi-Cloud AWS Solutions, VPC Peering, and Network Security.</p>
                 </div>
 
-                <!-- EDITABLE Team Member 3 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center group hover:border-sky-400/50 transition">
-                    <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden mb-4 flex items-center justify-center text-2xl font-bold text-slate-400 group-hover:border-sky-400">
+                <!-- Editable Member 3 -->
+                <div class="glass-card rounded-3xl p-6 text-center flex flex-col items-center hover:-translate-y-3 transition duration-500 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden mb-4 flex items-center justify-center text-2xl font-bold text-slate-400 group-hover:border-sky-400 transition">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <!-- EDITABLE NAME -->
-                    <h3 class="text-lg font-bold text-white">QAMAR KAIF</h3>
-                    <!-- EDITABLE ROLE -->
+                    <h3 class="text-lg font-bold text-white">Team Member 3</h3>
                     <p class="text-sky-400 text-xs font-medium mb-3">DevSecOps Engineer</p>
-                    <!-- EDITABLE DESCRIPTION -->
-                    <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                        Specializes in automated security scanning, secrets management, and compliance enforcement.
-                    </p>
-                    <div class="flex space-x-3 text-slate-400 text-sm mt-auto">
-                        <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-4">Specializes in automated security scanning and secrets management.</p>
                 </div>
 
-                <!-- EDITABLE Team Member 4 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 text-center flex flex-col items-center group hover:border-sky-400/50 transition">
-                    <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden mb-4 flex items-center justify-center text-2xl font-bold text-slate-400 group-hover:border-sky-400">
+                <!-- Editable Member 4 -->
+                <div class="glass-card rounded-3xl p-6 text-center flex flex-col items-center hover:-translate-y-3 transition duration-500 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden mb-4 flex items-center justify-center text-2xl font-bold text-slate-400 group-hover:border-sky-400 transition">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <!-- EDITABLE NAME -->
-                    <h3 class="text-lg font-bold text-white">AHMAD FRAZ</h3>
-                    <!-- EDITABLE ROLE -->
-                    <p class="text-sky-400 text-xs font-medium mb-3">SRE & Monitoring Engineer</p>
-                    <!-- EDITABLE DESCRIPTION -->
-                    <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                        Dedicated to Prometheus, Grafana dashboards, alerting pipelines, and uptime optimization.
-                    </p>
-                    <div class="flex space-x-3 text-slate-400 text-sm mt-auto">
-                        <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-github"></i></a>
-                        <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Team Member 4</h3>
+                    <p class="text-sky-400 text-xs font-medium mb-3">SRE & Monitoring</p>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-4">Dedicated to Prometheus, Grafana dashboards, and uptime optimization.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Certifications & Education -->
-    <section id="certs" class="py-20 px-6 max-w-7xl mx-auto">
+    <section id="certs" class="relative py-24 px-6 max-w-7xl mx-auto z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <!-- Certifications -->
-            <div class="space-y-6">
+            <div class="space-y-6" data-aos="fade-right">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-sky-500/10 text-sky-400 rounded-lg flex items-center justify-center text-xl">
+                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center text-2xl">
                         <i class="fa-solid fa-certificate"></i>
                     </div>
                     <div>
                         <h2 class="text-2xl font-bold text-white">Certifications & Training</h2>
-                        <p class="text-slate-400 text-xs">Industry accredited credentials</p>
+                        <p class="text-slate-400 text-xs">Accredited DevOps credentials</p>
                     </div>
                 </div>
 
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex justify-between items-center">
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-center">
                         <div>
                             <h4 class="font-bold text-white text-sm">Exam Prep: CKA (Certified Kubernetes Administrator)</h4>
                             <p class="text-xs text-slate-400">Whizlabs (Jul 2026)</p>
                         </div>
-                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-2.5 py-1 rounded">Kubernetes</span>
+                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-3 py-1 rounded-full border border-sky-500/30">Kubernetes</span>
                     </div>
 
-                    <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex justify-between items-center">
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-center">
                         <div>
                             <h4 class="font-bold text-white text-sm">Kubernetes Orchestration - Hands-On</h4>
                             <p class="text-xs text-slate-400">KodeKloud (Jul 2026)</p>
                         </div>
-                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-2.5 py-1 rounded">KodeKloud</span>
+                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-3 py-1 rounded-full border border-sky-500/30">KodeKloud</span>
                     </div>
 
-                    <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex justify-between items-center">
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-center">
                         <div>
                             <h4 class="font-bold text-white text-sm">Docker for Beginners with Hands-on Labs</h4>
                             <p class="text-xs text-slate-400">KodeKloud (Jun 2026)</p>
                         </div>
-                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-2.5 py-1 rounded">Docker</span>
+                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-3 py-1 rounded-full border border-sky-500/30">Docker</span>
                     </div>
 
-                    <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex justify-between items-center">
+                    <div class="glass-card p-4 rounded-2xl flex justify-between items-center">
                         <div>
-                            <h4 class="font-bold text-white text-sm">AWS DevOps</h4>
+                            <h4 class="font-bold text-white text-sm">AWS DevOps Certification</h4>
                             <p class="text-xs text-slate-400">MaximyzCloud (Jun 2026)</p>
                         </div>
-                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-2.5 py-1 rounded">AWS</span>
+                        <span class="text-xs font-mono bg-sky-500/10 text-sky-400 px-3 py-1 rounded-full border border-sky-500/30">AWS Cloud</span>
                     </div>
                 </div>
             </div>
 
             <!-- Education -->
-            <div class="space-y-6">
+            <div class="space-y-6" data-aos="fade-left">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-sky-500/10 text-sky-400 rounded-lg flex items-center justify-center text-xl">
+                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center text-2xl">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
                     <div>
-                        <h2 class="text-2xl font-bold text-white">Academic Education</h2>
-                        <p class="text-slate-400 text-xs">Degree and institutional background</p>
+                        <h2 class="text-2xl font-bold text-white">Academic Degree</h2>
+                        <p class="text-slate-400 text-xs">University software engineering background</p>
                     </div>
                 </div>
 
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-3">
-                    <span class="text-xs font-mono text-sky-400">May 2020 - Sep 2024</span>
-                    <h3 class="text-xl font-bold text-white">Bachelor of Science in Software Engineering</h3>
+                <div class="glass-card p-7 rounded-3xl space-y-4">
+                    <span class="text-xs font-mono text-sky-400 bg-sky-500/10 border border-sky-500/30 px-3 py-1 rounded-full">May 2020 - Sep 2024</span>
+                    <h3 class="text-xl font-bold text-white">BS Software Engineering</h3>
                     <p class="text-slate-300 text-sm"><i class="fa-solid fa-university mr-2 text-sky-400"></i>University of Okara, Pakistan</p>
                     <p class="text-slate-400 text-xs leading-relaxed pt-2 border-t border-slate-800">
-                        Focused on Software Architecture, Distributed Systems, Database Management Systems, Computer Networks, and Linux Operating Systems.
+                        Focused on Software Architecture, Cloud Infrastructure, Operating System Hardening, Computer Networks, and Distributed Systems.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Footer Section -->
-    <footer id="contact" class="bg-slate-950 border-t border-slate-800 pt-20 pb-12 px-6">
+    <!-- Footer & Contact Section -->
+    <footer id="contact" class="relative bg-slate-950 border-t border-slate-800 pt-20 pb-12 px-6 z-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div class="space-y-6">
-                <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold">Get In Touch</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white">Let's Build & Automate Your Infrastructure</h2>
+                <span class="text-sky-400 font-mono text-xs uppercase tracking-widest font-semibold border border-sky-500/30 px-3.5 py-1.5 rounded-full bg-sky-500/10">Initiate Contact</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Let's Build & Automate Your AWS Infrastructure</h2>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Have a project or want to scale your cloud deployments? Contact Nasir Mehmood and the DevOps engineering team today.
+                    Have a cloud deployment challenge or need high-scale CI/CD pipeline automation? Get in touch with Nasir Mehmood today.
                 </p>
 
                 <div class="space-y-4 pt-4">
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-lg flex items-center justify-center text-sky-400">
+                        <div class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center text-sky-400 text-lg">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div>
-                            <p class="text-xs text-slate-500">Call / WhatsApp</p>
+                            <p class="text-xs text-slate-500">Phone / WhatsApp</p>
                             <a href="tel:+923103691520" class="text-white font-medium hover:text-sky-400 transition">+92 310 3691520</a>
                         </div>
                     </div>
 
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-lg flex items-center justify-center text-sky-400">
+                        <div class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center text-sky-400 text-lg">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
-                            <p class="text-xs text-slate-500">Email Address</p>
+                            <p class="text-xs text-slate-500">Direct Email</p>
                             <a href="mailto:nasirbloch323@gmail.com" class="text-white font-medium hover:text-sky-400 transition">nasirbloch323@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-lg flex items-center justify-center text-sky-400">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-slate-500">Location</p>
-                            <p class="text-white font-medium">Lahore, Punjab, Pakistan</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Contact Form Placeholder -->
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+            <!-- Interactive Form -->
+            <div class="glass-card p-8 rounded-3xl">
                 <form onsubmit="event.preventDefault(); alert('Message sent successfully!');" class="space-y-4">
                     <div>
                         <label class="block text-xs font-mono text-slate-400 mb-2">Your Name</label>
-                        <input type="text" placeholder="John Doe" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500">
+                        <input type="text" placeholder="John Doe" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500">
                     </div>
                     <div>
                         <label class="block text-xs font-mono text-slate-400 mb-2">Email Address</label>
-                        <input type="email" placeholder="john@example.com" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500">
+                        <input type="email" placeholder="john@example.com" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-mono text-slate-400 mb-2">Message / Requirement</label>
-                        <textarea rows="4" placeholder="Describe your DevOps requirements..." required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500"></textarea>
+                        <label class="block text-xs font-mono text-slate-400 mb-2">Infrastructure Requirements</label>
+                        <textarea rows="4" placeholder="Describe your AWS, Kubernetes, or CI/CD goals..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-sky-500"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-slate-950 font-bold py-3 rounded-lg transition">
-                        Send Message
+                    <button type="submit" class="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-slate-950 font-bold py-3.5 rounded-xl transition duration-300 shadow-xl shadow-sky-500/25">
+                        Send Consultation Request
                     </button>
                 </form>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
             <p>&copy; 2026 Nasir Mehmood. All rights reserved.</p>
-            <div class="flex space-x-6 text-sm">
+            <div class="flex space-x-6">
                 <a href="https://github.com/nasirbloch323" target="_blank" class="hover:text-sky-400 transition"><i class="fa-brands fa-github"></i> GitHub</a>
                 <a href="mailto:nasirbloch323@gmail.com" class="hover:text-sky-400 transition"><i class="fa-solid fa-envelope"></i> Email</a>
             </div>
         </div>
     </footer>
 
-    <!-- Vanilla JavaScript Integration -->
+    <!-- JS Scripts for Animations & Multi-Tab Terminal -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Mobile Drawer Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // 1. Initialize AOS Scroll Reveal
+        AOS.init({ duration: 900, once: true });
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // 2. Mobile Menu Toggle
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Close Mobile Menu on Click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        // 3. Interactive Particle Constellation Canvas
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.9;
+                this.vy = (Math.random() - 0.5) * 0.9;
+                this.radius = Math.random() * 2 + 1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#38bdf8';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 65; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p1, index) => {
+                p1.update();
+                p1.draw();
+                for (let j = index + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+                    if (dist < 140) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${1 - dist / 140})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
             });
-        });
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        // 4. Multi-Tabbed CLI Terminal System
+        const tabData = {
+            aws: [
+                { text: "$ aws eks update-kubeconfig --region us-east-1 --name prod-cluster", color: "text-sky-400" },
+                { text: "Updated context arn:aws:eks:us-east-1:123456789:cluster/prod-cluster in ~/.kube/config", color: "text-slate-400" },
+                { text: "$ aws ec2 describe-instances --filters Name=tag:Environment,Values=Production", color: "text-sky-400" },
+                { text: "INSTANCES: i-0a892b1cd4 (State: running, Type: t3.xlarge)", color: "text-emerald-400" },
+                { text: "✔ AWS Cloud Infrastructure synchronized across Availability Zones.", color: "text-emerald-400 font-bold" }
+            ],
+            k8s: [
+                { text: "$ kubectl get pods -n production -o wide", color: "text-sky-400" },
+                { text: "flask-api-7b89f4b-1 &nbsp; 1/1 Running &nbsp; 0 &nbsp; 12d &nbsp; 10.0.2.14", color: "text-slate-300" },
+                { text: "flask-api-7b89f4b-2 &nbsp; 1/1 Running &nbsp; 0 &nbsp; 12d &nbsp; 10.0.2.19", color: "text-slate-300" },
+                { text: "$ helm upgrade --install flask-app ./chart -n production", color: "text-sky-400" },
+                { text: "Release 'flask-app' has been upgraded. Happy Helming!", color: "text-emerald-400 font-bold" }
+            ],
+            tf: [
+                { text: "$ terraform plan -out=aws-prod.tfplan", color: "text-sky-400" },
+                { text: "aws_vpc.main_vpc: Refreshing state...", color: "text-slate-500" },
+                { text: "aws_eks_cluster.prod: Refreshing state...", color: "text-slate-500" },
+                { text: "Plan: 0 to add, 2 to change, 0 to destroy.", color: "text-yellow-400" },
+                { text: "$ terraform apply aws-prod.tfplan", color: "text-sky-400" },
+                { text: "Apply complete! Resources: 0 added, 2 changed, 0 destroyed.", color: "text-emerald-400 font-bold" }
+            ]
+        };
+
+        let currentTab = 'aws';
+        let lineIndex = 0, charIndex = 0;
+        let timerId = null;
+
+        function switchTab(tab) {
+            currentTab = tab;
+            ['aws', 'k8s', 'tf'].forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === tab) {
+                    btn.className = "px-2.5 py-1 rounded bg-sky-500/20 text-sky-400 border border-sky-500/40";
+                } else {
+                    btn.className = "px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700";
+                }
+            });
+            clearTimeout(timerId);
+            document.getElementById('terminal-content').innerHTML = '';
+            lineIndex = 0;
+            charIndex = 0;
+            typeNextLine();
+        }
+
+        function typeNextLine() {
+            const commands = tabData[currentTab];
+            const terminalContent = document.getElementById('terminal-content');
+
+            if (lineIndex < commands.length) {
+                const currentObj = commands[lineIndex];
+                let lineEl = document.getElementById(`line-${lineIndex}`);
+                if (!lineEl) {
+                    lineEl = document.createElement('p');
+                    lineEl.id = `line-${lineIndex}`;
+                    lineEl.className = `${currentObj.color} typewriter-cursor`;
+                    terminalContent.appendChild(lineEl);
+                }
+                if (charIndex < currentObj.text.length) {
+                    lineEl.innerHTML = currentObj.text.substring(0, charIndex + 1);
+                    charIndex++;
+                    timerId = setTimeout(typeNextLine, 25);
+                } else {
+                    lineEl.classList.remove('typewriter-cursor');
+                    lineIndex++;
+                    charIndex = 0;
+                    timerId = setTimeout(typeNextLine, 300);
+                }
+            } else {
+                timerId = setTimeout(() => {
+                    terminalContent.innerHTML = '';
+                    lineIndex = 0;
+                    charIndex = 0;
+                    typeNextLine();
+                }, 5000);
+            }
+        }
+        typeNextLine();
     </script>
 </body>
 </html>
