@@ -1,473 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nasir Mehmood | DevOps Engineer Portfolio: Kubernetes, AWS, CI/CD</title>
-<meta name="description" content="Nasir Mehmood, DevOps engineer and freelancer on Fiverr and Upwork. Kubernetes, AWS, Jenkins CI/CD, GitOps, Terraform. 54 documented projects.">
-<link rel="icon" href="https://raw.githubusercontent.com/nasirbloch323/devops-portfolio/main/logo.jpg"><meta property="og:image" content="https://raw.githubusercontent.com/nasirbloch323/devops-portfolio/main/logo.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Geist:wght@300;400;500&family=JetBrains+Mono:wght@500&display=swap">
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nasir Mehmood | DevOps Engineer Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;700&family=Geist:wght@400;500&display=swap">
 <style>
-:root{--bg:#fff;--tx:#0e0e10;--mu:#85858b;--ln:#e2e2e6;--f:'Geist','Inter Tight','Helvetica Neue',Arial,sans-serif}
-*{box-sizing:border-box;margin:0}body{background:var(--bg);color:var(--tx);font:400 16px/1.5 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
-.w{padding:0 28px;max-width:1480px;margin:0 auto;position:relative}
-#pb{position:fixed;top:0;left:0;right:0;height:2px;background:var(--tx);transform:scaleX(0);transform-origin:0 50%;z-index:60}
-header{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-header .w{display:flex;justify-content:space-between;align-items:center;height:72px}.hr2{display:flex;align-items:center;gap:26px}
-.brand{display:flex;align-items:center;gap:10px;font-size:17px;letter-spacing:-.01em}.brand svg{width:34px}
-#mb,#mx{background:none;border:0;font:inherit;font-size:17px;cursor:pointer;color:inherit}
-.btn{border:1px solid var(--tx);padding:9px 18px;border-radius:40px;font-size:14px;transition:.3s;display:inline-block}.btn:hover{background:var(--tx);color:#fff}
-#menu{position:fixed;inset:0;background:#fff;z-index:70;padding:110px 28px 28px;display:flex;flex-direction:column;gap:2px;clip-path:circle(0 at calc(100% - 50px) 36px);visibility:hidden}
-#menu a{font-size:clamp(38px,7vw,84px);letter-spacing:-.04em;line-height:1.1;overflow:hidden;display:block}#menu a:hover{color:var(--mu)}#mx{position:absolute;top:24px;right:28px}
-.cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:200}
-.ln{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}.li{display:block}.sw2{display:inline}
-#ld{position:fixed;inset:0;background:#fff;z-index:100;display:grid;place-items:center;animation:ldo 0s 7s forwards}@keyframes ldo{to{visibility:hidden}}.rm #ld{display:none}
-section{position:relative;overflow-x:clip}.lab{text-align:center;font-size:13px;padding-top:150px}.hr{margin-top:14px;border-top:1px solid var(--ln)}
-h1,h2,h3,h4{font-weight:400}h1{font-size:clamp(46px,6.4vw,104px);line-height:1;letter-spacing:-.045em}
-.big{font-size:clamp(38px,5.2vw,80px);line-height:1.04;letter-spacing:-.04em}.mu,.lead{color:var(--mu)}.lead{font-size:clamp(18px,1.6vw,23px);line-height:1.38;letter-spacing:-.01em;max-width:440px;margin-top:34px}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-top:36px}
-#hero{min-height:max(100vh,900px);overflow:hidden}.hc{position:relative;z-index:3;padding-top:160px;max-width:880px}
-.bd{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;border:1px solid var(--ln);border-radius:40px;padding:6px 14px;margin-bottom:34px;background:rgba(255,255,255,.7)}.bd i{width:8px;height:8px;border-radius:50%;background:#2fbf71;animation:pl 1.6s infinite}@keyframes pl{50%{box-shadow:0 0 0 7px rgba(47,191,113,0)}0%{box-shadow:0 0 0 0 rgba(47,191,113,.5)}}
-.role{font-size:clamp(22px,2.4vw,34px);letter-spacing:-.025em;margin:26px 0 14px}.hp{color:var(--mu);font-size:17px;max-width:500px;margin-bottom:12px}
-.bgs{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 38px;font-size:14px;color:var(--mu)}.acts{display:flex;gap:38px;flex-wrap:wrap}
-.ex{display:inline-block;padding-bottom:12px;font-size:17px;position:relative;min-width:120px}.ex::before,.ex::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--tx)}.ex::before{opacity:.2}.ex::after{transform-origin:0 50%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.ex:hover::after{transform:scaleX(0);transform-origin:100% 50%}
-.rib{position:absolute;left:-8%;width:116%;bottom:-6%;z-index:1}.dr{position:fixed;right:3%;top:13vh;width:min(46vw,620px);aspect-ratio:1;pointer-events:none;z-index:15}
-.mq{overflow:hidden;border-block:1px solid var(--ln);padding:22px 0;white-space:nowrap}.mq div{display:inline-flex;gap:56px;padding-right:56px;animation:mq 46s linear infinite;font-size:clamp(28px,4.2vw,60px);letter-spacing:-.035em;color:#cfcfd4}.mq span:nth-child(odd){color:var(--tx)}@keyframes mq{to{transform:translateX(-50%)}}
-.hl{position:relative}.hl::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--ln);transform:scaleX(var(--s,1));transform-origin:0 50%}
-.it{padding:26px 0 54px}.it h3{font-size:clamp(26px,2.5vw,38px);letter-spacing:-.03em;margin-bottom:12px}.it p{color:var(--mu);font-size:17px;max-width:400px;line-height:1.4}
-.tm{margin-top:50px;background:#0c0d10;color:#c9ccd3;border-radius:18px;overflow:hidden;font:400 14px/1.7 ui-monospace,Menlo,Consolas,monospace;box-shadow:0 40px 90px -40px rgba(0,0,0,.5)}
-.tb{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #22252c;color:#8b919b;font-size:13px}.tb button{background:none;border:1px solid #2c3038;color:#8b919b;border-radius:30px;padding:3px 14px;margin-left:8px;font:inherit;cursor:pointer}.tb button.on{color:#7fe4f2;border-color:#7fe4f2}
-#tc{padding:26px 24px;min-height:260px}#tc p.s{color:#7fe4f2}#tc p.g{color:#7ee2a1}#tc p.m{color:#6f7681}#tc p.y{color:#f0d77a}#tc p.t::after{content:"█";animation:bl .8s steps(1) infinite}@keyframes bl{50%{opacity:0}}
-.dk{background:#09090b;color:#f3f3f5;--ln:#2a2a30;margin-top:150px;padding-bottom:140px}.dk .lab{padding-top:110px}.dk .lead,.dk .mu{color:#9a9aa3}
-.gl{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none}.cen{text-align:center;max-width:900px;margin:0 auto;padding-top:60px}.cen .lead{margin:28px auto 0;max-width:560px}
-.nds{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:90px;position:relative}.flow{position:absolute;left:0;right:0;top:10px;height:1px;background:#2a2a30;overflow:hidden}.flow::after{content:"";position:absolute;top:0;height:1px;width:22%;background:linear-gradient(90deg,transparent,#7fe4f2,transparent);animation:fl 3.4s linear infinite}@keyframes fl{from{left:-25%}to{left:100%}}
-.nd{padding-top:44px;position:relative}.dot{position:absolute;top:4px;width:13px;height:13px;border-radius:50%;background:#7fe4f2;box-shadow:0 0 20px #7fe4f2}.nd h4{font-size:24px;letter-spacing:-.025em;margin-bottom:10px}.nd p{color:#9a9aa3;font-size:15.5px;line-height:1.4}.nd .chip{display:inline-block;margin-top:16px;font-size:12.5px;border:1px solid #3a3a42;border-radius:30px;padding:2px 12px;color:#7fe4f2}
-.vlw{position:relative;padding-left:34px;margin-top:70px}.vl{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--tx);transform-origin:0 0}
-.ex-r{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;padding:30px 0 46px}.ex-r::after{content:"";position:absolute;left:-38px;top:36px;width:9px;height:9px;border-radius:50%;background:var(--tx)}.ex-r small{color:var(--mu);font-size:15px}.ex-r h3{font-size:clamp(24px,2.4vw,34px);letter-spacing:-.03em}.co{color:var(--mu);margin:2px 0 10px}.ex-r p{color:var(--mu);font-size:16px;line-height:1.45;max-width:560px}
-.fl{display:inline-block;border:1px solid var(--tx);border-radius:30px;font-size:12px;padding:0 10px;margin-left:10px;vertical-align:middle;letter-spacing:0}
-.chips{display:flex;flex-wrap:wrap;gap:8px 24px;margin:54px 0 10px}.chips button{background:none;border:0;border-bottom:1px solid transparent;font:inherit;font-size:15px;color:var(--mu);cursor:pointer;padding:4px 0;transition:.3s}.chips button.on,.chips button:hover{color:var(--tx);border-color:var(--tx)}
-#pg{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}.pc{display:grid;gap:9px;padding:26px 0 34px;align-content:start}.pc h4{font-size:23px;letter-spacing:-.025em;line-height:1.2;word-break:break-word;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.pc:hover h4{transform:translateX(12px)}.pc p{color:var(--mu);font-size:15px;line-height:1.4}.pc small{font-size:13px;color:var(--mu)}.pc em{font-style:normal;font-size:11.5px;background:var(--tx);color:#fff;border-radius:30px;padding:1px 10px;justify-self:start}
-.tmg{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:70px}.ph{overflow:hidden;aspect-ratio:4/5;background:#ececef;margin-bottom:20px}.ph img{width:100%;height:118%;object-fit:cover;filter:grayscale(1);transition:filter .6s}.tmc:hover .ph img{filter:none}.tmc h3{font-size:25px;letter-spacing:-.03em}.tmc .co{margin:0 0 10px}.tmc p{color:var(--mu);font-size:15px;line-height:1.4}.tmc nav{display:flex;gap:16px;margin-top:14px;font-size:14px}.tmc nav a{border-bottom:1px solid var(--ln)}
-.rw{display:flex;justify-content:space-between;gap:18px;padding:18px 0}.rw h4{font-size:19px;letter-spacing:-.015em}.rw p{color:var(--mu);font-size:14px}.rw span{border:1px solid var(--ln);border-radius:30px;padding:2px 14px;font-size:13px;align-self:center;white-space:nowrap}
-.ct{display:flex;gap:60px;flex-wrap:wrap;margin-top:56px}.ct small{display:block;color:var(--mu);font-size:14px}.ct a{font-size:clamp(24px,2.8vw,40px);letter-spacing:-.03em}
-footer{padding-top:150px}.fg{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding-top:44px}.fn a{display:block;font-size:clamp(32px,3.8vw,56px);letter-spacing:-.04em;line-height:1.18}.fn a:hover{color:var(--mu)}.fs a{display:block;font-size:17px;margin-bottom:12px}
-.dis{color:#b4b4ba;font-size:12.5px;line-height:1.55;margin-top:80px;max-width:1100px}.cp{display:flex;gap:24px;flex-wrap:wrap;color:#b4b4ba;font-size:12.5px;margin-top:22px}
-.wm{display:flex;justify-content:space-between;align-items:center;font-size:clamp(60px,10.5vw,170px);letter-spacing:-.05em;line-height:1;padding:130px 0 40px;overflow:hidden}.wm svg{width:clamp(56px,7.4vw,118px)}.wm .c{display:inline-block}
-.blob{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(140,190,255,.32),transparent 65%);filter:blur(34px);pointer-events:none;z-index:-1}
-
-:root{--bg:#f5f7fc;--tx:#0a1226;--mu:#69728a;--ln:#dce2ef;--ac:#2750ff;--ac2:#12c8d6;--d:'Bricolage Grotesque','Geist',sans-serif;--m:'JetBrains Mono',ui-monospace,monospace}
-body{background:var(--bg);font-size:16.5px}
-h1,h2,h3,h4,.brand,#menu a,.fn a,.wm,.ct a,.role,.mq div{font-family:var(--d)}
-h1,.big{font-weight:500}.big{letter-spacing:-.035em}h3,h4{font-weight:500}
-header{background:rgba(245,247,252,.78)}#menu{background:var(--bg)}
-#pb{background:linear-gradient(90deg,var(--ac),var(--ac2))}
-.btn:hover{background:var(--ac);border-color:var(--ac)}.ex::after{background:var(--ac)}
-.pc:hover h4,.fn a:hover,#menu a:hover{color:var(--ac)}.pc em{background:var(--ac)}
-.chips button.on,.chips button:hover{color:var(--ac);border-color:var(--ac)}
-.vl{background:linear-gradient(var(--ac),var(--ac2))}.ex-r::after{background:var(--ac);box-shadow:0 0 0 5px rgba(39,80,255,.16)}
-.fl{border-color:var(--ac);color:var(--ac)}.rw span{color:var(--ac);border-color:rgba(39,80,255,.3)}
-.dk{background:#050b1f}.blob{background:radial-gradient(circle,rgba(39,80,255,.22),transparent 65%)}
-.mq span:nth-child(3n){color:var(--ac)}
-#hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(39,80,255,.18) 1px,transparent 1.3px);background-size:28px 28px;-webkit-mask-image:linear-gradient(#000,transparent 75%);mask-image:linear-gradient(#000,transparent 75%)}
-.wd{display:inline-block;transform-origin:0 100%;transition:color .3s}.big .wd:hover,h1 .wd:hover{color:var(--ac)}
-/* new DevOps blocks */
-.xsk{position:sticky;top:110px;align-self:start}
-.xp{margin-top:44px;max-width:470px;background:linear-gradient(160deg,#0a1433,#0d1f4d);color:#dbe4ff;border-radius:22px;padding:22px 24px 24px;box-shadow:0 50px 90px -45px rgba(39,80,255,.7);font-size:14.5px}
-.xph{display:flex;justify-content:space-between;align-items:center;font:500 12.5px var(--m);color:#8ea0d6;margin-bottom:8px}.xph b{color:#22c55e;font-weight:500}.xph b::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:7px;animation:pl 1.6s infinite}
-.xs{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid rgba(255,255,255,.08);opacity:.45;transition:opacity .4s}
-.xs i{width:15px;height:15px;border-radius:50%;border:2px solid #4a5a8a;flex:none;transition:.3s}.xs b{margin-left:auto;font:500 12px var(--m);color:#7f90c0}
-.xs.r{opacity:1}.xs.r i{border-color:var(--ac2);border-top-color:transparent;animation:xsp .8s linear infinite}.xs.r b{color:var(--ac2)}
-.xs.d{opacity:1}.xs.d i{background:#22c55e;border-color:#22c55e}.xs.d b{color:#22c55e}
-.xpd{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-top:16px}.xpd i{aspect-ratio:1;border-radius:6px;background:#2750ff;transition:background .5s,transform .5s}.xpd i.n{background:#22c55e;transform:scale(1.1)}
-.xcap{font:500 12px var(--m);color:#8ea0d6;margin-top:10px}
-@keyframes xsp{to{transform:rotate(1turn)}}
-.xt{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;max-width:620px}.xt span{font-size:13px;border:1px solid var(--ln);background:#fff;border-radius:30px;padding:3px 13px;transition:.3s}.xt span:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
-#contact .cols{align-items:center}
-.xo{position:relative;width:min(100%,500px);aspect-ratio:1;justify-self:center;margin-top:30px}
-.xr{position:absolute;border:1px dashed #b4c0e0;border-radius:50%;animation:xsp var(--t) linear infinite}
-.xr span{position:absolute;left:50%;top:0;margin:-16px 0 0 -42px;width:84px;text-align:center;padding:5px 0;border-radius:30px;background:#fff;border:1px solid var(--ln);font-size:13px;box-shadow:0 10px 24px -12px rgba(39,80,255,.55);animation:xsp var(--t) linear infinite reverse}
-.xr span+span{top:auto;bottom:0;margin:0 0 -16px -42px}
-.xc{position:absolute;inset:39%;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#fff;box-shadow:0 0 0 14px rgba(39,80,255,.09),0 0 0 34px rgba(39,80,255,.05)}.xc svg{width:58%}
-.xl{margin-top:34px;max-width:470px;background:#0a1433;color:#dbe4ff;border-radius:18px;padding:18px 22px;font:500 12.5px var(--m)}
-.xlh{display:flex;justify-content:space-between;color:#8ea0d6;margin-bottom:6px}
-.xq{display:grid;grid-template-columns:104px 1fr 44px;gap:12px;align-items:center;padding:8px 0}.xq b{text-align:right;font-weight:500}
-.xbr{height:6px;border-radius:6px;background:#1c2a57;overflow:hidden}.xbr i{display:block;height:100%;width:50%;border-radius:6px;background:linear-gradient(90deg,var(--ac),var(--ac2));transition:width 1s cubic-bezier(.2,.8,.2,1)}
-@media(max-width:900px){.xsk{position:static}.xo{margin-top:10px}.xr span{font-size:11.5px;width:70px;margin-left:-35px}.xr span+span{margin-left:-35px}}
-
-::selection{background:var(--ac);color:#fff}a:focus-visible,button:focus-visible{outline-color:var(--ac)}
-.big{font-size:clamp(34px,4.4vw,66px);line-height:1.06;letter-spacing:-.03em}.lead{font-size:clamp(17px,1.4vw,21px)}
-.lab{text-align:left;padding-top:120px;font:500 13px var(--m);color:var(--mu);display:flex;align-items:center;gap:12px}
-.lab::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 5px rgba(39,80,255,.15)}.dk .lab{padding-top:110px;color:#8ea0d6}
-.rw span{border:0;padding:0;border-radius:0;color:inherit;font-size:inherit;white-space:normal;align-self:auto}
-.rw>span{border:1px solid rgba(39,80,255,.3);color:var(--ac);border-radius:30px;padding:2px 14px;font-size:13px;white-space:nowrap;align-self:center}
-.dk::after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
-.xst{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding-top:80px;padding-bottom:10px}.xst>div{border-left:1px solid var(--ln);padding-left:22px}
-.xst b{display:block;font:500 clamp(42px,5vw,74px)/1 var(--d);letter-spacing:-.04em;background:linear-gradient(120deg,var(--tx) 30%,var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}
-.xst .xk{display:block;color:var(--mu);font-size:15px;margin-top:10px}
-.pc{position:relative;padding:26px 22px 30px;margin:0 -22px;border-radius:16px}
-.pc::after{content:"";position:absolute;inset:0;border-radius:16px;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(39,80,255,.1),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}.pc:hover::after{opacity:1}
-#rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;gap:15px;align-items:flex-end}
-#rail a{display:flex;align-items:center;gap:10px;font:500 12px var(--m);color:var(--mu)}#rail a span{opacity:0;transform:translateX(8px);transition:.3s}
-#rail a i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--mu);background:var(--bg);transition:.3s;position:relative;z-index:1}
-#rail a.on{color:var(--ac)}#rail a.on span{opacity:1;transform:none}#rail a.on i{background:var(--ac);border-color:var(--ac);box-shadow:0 0 0 5px rgba(39,80,255,.18)}
-#rail::before,#rail b{content:"";position:absolute;right:4px;top:6px;width:1px;background:var(--ln)}#rail::before{bottom:6px}#rail b{height:calc((100% - 12px)*var(--p,0));background:var(--ac)}
-@media(max-width:1280px){#rail{display:none}}@media(max-width:900px){.xst{grid-template-columns:1fr 1fr}}
-
-:root{--mu:#505a73;--bg:#f4f6fd}
-.blg{width:36px;height:36px;border-radius:10px;object-fit:cover;box-shadow:0 6px 18px -8px rgba(39,80,255,.6)}
-#mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-#mesh i{position:absolute;width:var(--z);height:var(--z);border-radius:50%;background:var(--c);filter:blur(100px);opacity:.42;animation:xd var(--t) ease-in-out infinite alternate}
-@keyframes xd{to{transform:translate(9vw,7vh) scale(1.2)}}
-.pc:hover{background:rgba(255,255,255,.7)}.xt span,.rw>span{background:rgba(255,255,255,.75)}
-
-:root{--ac3:#7a3cff}
-#pb{background:linear-gradient(90deg,var(--ac),var(--ac3),var(--ac2))}.vl{background:linear-gradient(var(--ac),var(--ac3),var(--ac2))}
-.xst b{background:linear-gradient(120deg,var(--tx) 25%,var(--ac) 70%,var(--ac3))!important;-webkit-background-clip:text;background-clip:text}
-.hr2 .btn{background:linear-gradient(120deg,var(--ac),var(--ac3));color:#fff;border-color:transparent;transition:.3s}.hr2 .btn:hover{box-shadow:0 12px 28px -10px rgba(39,80,255,.7);transform:translateY(-1px)}
-.bt{font:500 11px var(--m);border:1px solid var(--ln);border-radius:20px;padding:1px 9px;color:var(--mu);margin-left:4px}
-#mesh i{filter:none;background:radial-gradient(circle,var(--c),transparent 66%);opacity:.6;will-change:transform}
-#hm{position:fixed;left:22px;bottom:22px;z-index:35;display:flex;align-items:center;gap:9px;padding:11px 18px;border-radius:40px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--ln);box-shadow:0 14px 34px -14px rgba(39,80,255,.5);font-size:14px;opacity:0;transform:translateY(16px);pointer-events:none;transition:.4s}
-#hm.on{opacity:1;transform:none;pointer-events:auto}#hm i{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pl 1.6s infinite}
-
-.xlc{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;margin-top:60px}#xls{width:100%;overflow:visible}
-.xnd circle{fill:#fff;stroke:#b4c0e0;stroke-width:2;transition:.3s}.xnd text{font:500 13px var(--f);fill:var(--mu);text-anchor:middle;transition:.3s}
-.xnd.on circle{fill:var(--ac);stroke:var(--ac)}.xnd.on text{fill:var(--tx);font-weight:600}
-.xrw{display:flex;justify-content:space-between;gap:16px;padding:15px 18px;margin:0 -18px;border-radius:14px;border-top:1px solid var(--ln);transition:.3s}
-.xrw b{font:500 20px var(--d);letter-spacing:-.02em;transition:color .3s}.xrw span{color:var(--mu);font-size:14.5px;text-align:right}
-.xrw.on{background:rgba(255,255,255,.82);box-shadow:0 14px 30px -18px rgba(39,80,255,.5)}.xrw.on b{color:var(--ac)}
-@media(max-width:900px){.xlc{grid-template-columns:1fr;gap:30px}}
-
-.xst b{-webkit-background-clip:text!important;background-clip:text!important}
-#hm{left:auto;right:22px}#term .lab{padding-top:60px}.xst{padding-top:50px}
-#pbar{display:flex;gap:4px;height:48px;margin-top:44px;border-radius:12px;overflow:hidden}
-#pbar button{flex:var(--n) 1 0;min-width:0;border:0;cursor:pointer;color:#fff;font:500 12.5px var(--f);text-align:left;padding:0 10px;overflow:hidden;white-space:nowrap;transform-origin:0 50%;transition:flex-grow .5s,filter .3s}
-#pbar button:hover{flex-grow:calc(var(--n) + 5);filter:brightness(1.1)}
-.xk8{margin-top:44px;border-radius:18px;padding:20px 22px;background:#0a1433;color:#dbe4ff;max-width:560px}
-.xk8h{display:flex;justify-content:space-between;font:500 12.5px var(--m);color:#8ea0d6;margin-bottom:14px}
-.xk8n{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.xnode{border:1px dashed #33447a;border-radius:12px;padding:10px}
-.xnode em{display:block;font:500 11px var(--m);color:#7f90c0;margin-bottom:8px;font-style:normal}
-.xpods{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.xpods i{aspect-ratio:1;border-radius:6px;background:#22c55e;transition:background .4s,transform .4s}
-.xpods i.f{background:#ef4444;transform:scale(.78)}.xpods i.w{background:#f59e0b}
-@media(max-width:900px){.cols,.fg,.ex-r,#pg,.tmg,.nds{grid-template-columns:1fr}.tmg,.nds{gap:44px}.hr2 .btn{display:none}.dr{top:48vh;width:72vw;z-index:2}#hero{min-height:1000px}.cur{display:none}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
-</style>
-<meta property="og:title" content="Nasir Mehmood | DevOps Engineer Portfolio"><meta property="og:description" content="Portfolio of Nasir Mehmood, DevOps engineer. Kubernetes, AWS, Jenkins CI/CD, GitOps, Terraform. 54 documented projects. Available for freelance work."><meta name="twitter:card" content="summary"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nasir Mehmood","jobTitle":"DevOps Engineer","url":"https://github.com/nasirbloch323","sameAs":["https://github.com/nasirbloch323","https://www.linkedin.com/in/nasir-mehmood-041908205"],"knowsAbout":["Kubernetes","AWS","Jenkins","Terraform","Docker","ArgoCD"]}</script></head>
-<body>
-<i id="pb"></i><div id="mesh"><i style="--c:#5b7cff;--z:620px;left:-8%;top:-6%;--t:19s"></i><i style="--c:#b97bff;--z:560px;left:62%;top:4%;--t:23s"></i><i style="--c:#34e0cf;--z:600px;left:-10%;top:52%;--t:21s"></i><i style="--c:#ff8cc4;--z:520px;left:68%;top:58%;--t:25s"></i><i style="--c:#ffc063;--z:460px;left:34%;top:30%;--t:27s"></i></div><a id="hm" href="#contact"><i></i>Available for hire</a><nav id="rail" aria-label="Sections"><b></b><a href="#hero"><span>Intro</span><i></i></a><a href="#about"><span>Architecture</span><i></i></a><a href="#services"><span>Services</span><i></i></a><a href="#lifecycle"><span>Lifecycle</span><i></i></a><a href="#experience"><span>Experience</span><i></i></a><a href="#projects"><span>Projects</span><i></i></a><a href="#team"><span>Team</span><i></i></a><a href="#certs"><span>Credentials</span><i></i></a><a href="#contact"><span>Contact</span><i></i></a></nav><div class="cur" id="cur"></div>
-<div id="ld"><svg viewBox="0 0 40 20" width="96"><path id="ldp" pathLength="1" d="M12 3C5 3 2 7 2 10s3 7 10 7c5 0 7-4 10-7s5-7 10-7c4 0 6 3 6 7s-3 7-8 7" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1"/></svg></div>
-<svg width="0" height="0" style="position:absolute"><symbol id="lg" viewBox="0 0 40 20"><path d="M12 3C5 3 2 7 2 10s3 7 10 7c5 0 7-4 10-7s5-7 10-7c4 0 6 3 6 7s-3 7-8 7" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/></symbol></svg>
-<header><div class="w"><a class="brand" href="#hero"><img class="blg" src="https://raw.githubusercontent.com/nasirbloch323/devops-portfolio/main/logo.jpg" alt="IronPipe logo" onload="this.nextElementSibling.style.display='none'" onerror="this.remove()"><svg viewBox="0 0 40 20"><use href="#lg"/></svg>IronPipe<small class="bt">Portfolio</small></a><div class="hr2"><a class="btn" href="https://www.linkedin.com/in/nasir-mehmood-041908205" target="_blank" rel="noopener">Hire me</a><button id="mb" aria-expanded="false">Menu</button></div></div></header>
-<div id="menu"><button id="mx">Close</button><a href="#about">Architecture</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#team">Team</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></div>
-
-<section id="hero">
-<svg class="rib" viewBox="0 0 1400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs>
-<linearGradient id="a" x1="0" x2="1"><stop offset="0" stop-color="#eceef3"/><stop offset=".3" stop-color="#b8bcc8"/><stop offset=".5" stop-color="#f6f6fa"/><stop offset=".68" stop-color="#a5b8ff"/><stop offset=".82" stop-color="#9ff0ea"/><stop offset="1" stop-color="#c9d6ff"/></linearGradient>
-<linearGradient id="b" x1="0" x2="1"><stop offset="0" stop-color="#d9dce6"/><stop offset=".45" stop-color="#fafafc"/><stop offset=".7" stop-color="#9fd8ee"/><stop offset="1" stop-color="#b5a8ff"/></linearGradient></defs>
-<g fill="none" stroke-linecap="round"><path d="M-60 330C250 250 520 380 800 320S1180 150 1480 170" stroke="url(#a)" stroke-width="120"/><path d="M-60 306C250 226 520 356 800 296S1180 126 1480 146" stroke="#fff" stroke-opacity=".55" stroke-width="22"/><path d="M-60 470C300 420 560 330 860 400S1240 330 1480 360" stroke="url(#b)" stroke-width="110"/><path d="M-60 448C300 398 560 308 860 378S1240 308 1480 338" stroke="#fff" stroke-opacity=".5" stroke-width="18"/><path d="M300 560C560 470 780 470 1040 260S1330 40 1480 60" stroke="url(#a)" stroke-width="70" opacity=".85"/></g></svg>
-<div class="w"><div class="hc">
-<div class="bd"><i></i>Personal portfolio: available for freelance DevOps work</div>
-<h1>Hi, I'm Nasir Mehmood</h1>
-<p class="role">DevOps Engineer &amp; Cloud Infrastructure Specialist</p>
-<p class="hp">Specializing in Kubernetes (EKS/KIND), Docker, Jenkins CI/CD, GitOps (ArgoCD), Terraform/OpenTofu, Ansible, and automated Python/Bash scripting.</p>
-<p class="hp">Working full-time as a freelancer on Fiverr and Upwork since late 2025.</p>
-<div class="bgs"><span>Okara / Lahore, Pakistan</span><span>nasirbloch323@gmail.com</span><span>+92 310 3691520</span></div>
-<div class="acts"><a class="ex" href="#projects">View my work</a><a class="ex" href="#contact">Hire me</a><a class="ex" href="#team">Meet the team</a></div>
-</div></div>
-<canvas id="dr3" class="dr" aria-hidden="true"></canvas>
-</section>
-
-<div class="mq" aria-hidden="true"><div id="mqd"></div></div><section id="stats"><div class="w xst"><div><b><span data-n="54">0</span>+</b><span class="xk">Public repositories documented</span></div><div><b><span data-n="15">0</span>+</b><span class="xk">Kubernetes projects</span></div><div><b><span data-n="7">0</span>+</b><span class="xk">CI/CD pipeline projects</span></div><div><b><span data-n="4">0</span>+</b><span class="xk">Years of IT experience</span></div></div></section>
-
-<section id="term"><div class="w"><div class="lab">Terminal</div><div class="hr"></div>
-<div class="tm"><div class="tb"><span>admin@ironpipe-cluster:~$</span><span><button class="on" data-t="aws">AWS CLI</button><button data-t="k8s">kubectl</button><button data-t="tf">Terraform</button></span></div><div id="tc"></div></div></div></section>
-
-<section id="about" class="dk">
-<i class="gl" style="width:520px;height:520px;background:#2750ff;left:-6%;top:6%"></i><i class="gl" style="width:560px;height:560px;background:#7a3cff;right:-8%;top:0"></i><i class="gl" style="width:600px;height:600px;background:#12c8d6;left:30%;top:22%"></i><i class="gl" style="width:420px;height:420px;background:#25d3c6;right:14%;top:40%"></i>
-<div class="w"><div class="lab">Architecture</div><div class="hr"></div>
-<div class="cen"><h2 class="big">AWS Infrastructure Architecture</h2><p class="lead">Real-time simulation of production AWS VPC, EKS Clusters, Load Balancers, and Auto-scaling groups.</p></div>
-<div class="nds" id="nds"><div class="flow"></div></div></div></section>
-
-<section id="services"><i class="blob" style="right:-10%;top:30%"></i><div class="w"><div class="lab">Services</div><div class="hr"></div>
-<div class="cols"><div class="xsk"><h2 class="big">IronPipe Cloud &amp; DevOps Services</h2><p class="lead">Comprehensive infrastructure automation, container orchestration, and server management.</p>
-<div class="xp"><div class="xph"><span>pipeline: main</span><b>live</b></div>
-<div class="xs"><i></i><span>git push origin main</span><b>queued</b></div>
-<div class="xs"><i></i><span>Jenkins pipeline</span><b>queued</b></div>
-<div class="xs"><i></i><span>Docker build &amp; push</span><b>queued</b></div>
-<div class="xs"><i></i><span>Trivy image scan</span><b>queued</b></div>
-<div class="xs"><i></i><span>Helm + ArgoCD to EKS</span><b>queued</b></div>
-<div class="xpd"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="xcap">rolling update: v1 (blue) to v2 (green)</div></div></div><div id="svc"></div></div></div></section>
-
-<section id="lifecycle"><div class="w"><div class="lab">DevOps Lifecycle</div><div class="hr"></div>
-<div class="cols"><h2 class="big">From commit to production in one continuous loop</h2><p class="lead">The lifecycle I follow on every engagement, and the tools I use at each stage.</p></div>
-<div class="xlc"><svg id="xls" viewBox="0 0 600 300" role="img" aria-label="DevOps lifecycle loop"></svg><div id="xlr"></div></div></div></section>
-
-<section id="experience"><div class="w"><div class="lab">Experience</div><div class="hr"></div>
-<div class="cols"><h2 class="big">Professional Experience (4+ Years IT)</h2></div>
-<div class="vlw" id="exw"><i class="vl"></i></div></div></section>
-
-<section id="projects"><i class="blob" style="left:-12%;top:20%"></i><div class="w"><div class="lab">Projects</div><div class="hr"></div>
-<div class="cols"><h2 class="big">Production Projects &amp; Demos</h2><p class="lead">Featured Repositories (<span id="cnt" data-n="54">54</span> Total)</p></div>
-<div id="pbar" aria-label="Projects by category"></div><div class="chips" id="chips"></div><div id="pg"></div></div></section>
-
-<section id="team"><div class="w"><div class="lab">IronPipe Agency Team</div><div class="hr"></div>
-<div class="cols"><h2 class="big">DevOps Specialists &amp; Engineers</h2><p class="lead">Engineers collaborating to deliver high-scale AWS infrastructure and CI/CD automation.</p></div>
-<div class="tmg" id="tmg"></div></div></section>
-
-<section id="certs"><div class="w"><div class="lab">Certifications &amp; Education</div><div class="hr"></div>
-<div class="cols" style="gap:70px"><div><h2 class="big">Certifications &amp; Training</h2><p class="lead">Accredited DevOps credentials</p><div style="margin-top:44px" id="crt"></div></div>
-<div><h2 class="big">Academic Degree</h2><p class="lead">University software engineering background</p>
-<div class="hl" style="margin-top:44px;padding-top:26px"><small class="mu">May 2020 - Sep 2024</small><h3 style="font-size:32px;letter-spacing:-.03em;margin:8px 0">BS Software Engineering</h3><p class="co">University of Okara, Pakistan</p><p class="mu" style="max-width:480px">Focused on Software Architecture, Cloud Infrastructure, Operating System Hardening, Computer Networks, and Distributed Systems.</p></div><div class="xk8"><div class="xk8h"><span>kubectl get pods</span><span id="xk8s">12/12 healthy</span></div><div class="xk8n"><div class="xnode"><em>node-1</em><div class="xpods"><i></i><i></i><i></i><i></i></div></div><div class="xnode"><em>node-2</em><div class="xpods"><i></i><i></i><i></i><i></i></div></div><div class="xnode"><em>node-3</em><div class="xpods"><i></i><i></i><i></i><i></i></div></div></div><div class="xcap">self-healing: crashed pods restart automatically</div></div></div></div></div></section>
-
-<section id="contact"><div class="w"><div class="lab">IronPipe Consultation</div><div class="hr"></div>
-<div class="cols"><div><h2 class="big">Let's Build &amp; Automate Your AWS Infrastructure</h2><p class="lead">Have a cloud deployment challenge or need high-scale CI/CD pipeline automation? Get in touch with Nasir Mehmood and the IronPipe team today.</p></div><div class="xo"><div class="xr" style="inset:0;--t:54s"><span>Jenkins</span><span>Terraform</span></div><div class="xr" style="inset:15%;--t:40s"><span>AWS</span><span>Docker</span></div><div class="xr" style="inset:29%;--t:28s"><span>K8s</span><span>Helm</span></div><div class="xc"><svg viewBox="0 0 40 20"><use href="#lg"/></svg></div></div></div>
-<div class="ct"><div><small>Phone / WhatsApp</small><a href="tel:+923103691520">+92 310 3691520</a></div><div><small>Direct Email</small><a href="mailto:nasirbloch323@gmail.com">nasirbloch323@gmail.com</a></div></div></div></section>
-
-<footer><div class="w"><div class="hr"></div><div class="fg"><div class="fn"><a href="#about">Architecture</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#team">Team</a><a href="#certs">Certifications</a></div>
-<div class="fs"><a href="https://github.com/nasirbloch323" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/nasir-mehmood-041908205" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:nasirbloch323@gmail.com">Email</a><a href="tel:+923103691520">Phone</a><div class="xl"><div class="xlh"><span>ironpipe-cluster</span><span id="xdp">last deploy 0s ago</span></div>
-<div class="xq"><span>CPU load</span><span class="xbr"><i></i></span><b>0%</b></div>
-<div class="xq"><span>Pod health</span><span class="xbr"><i></i></span><b>0%</b></div>
-<div class="xq"><span>Deploys ok</span><span class="xbr"><i></i></span><b>0%</b></div></div></div></div>
-<p class="dis">IronPipe is the cloud and DevOps agency of Nasir Mehmood, working with clients through Fiverr and Upwork. Project descriptions are taken from public GitHub repositories and show hands-on learning and demonstration work. Nothing on this website is a guarantee of results.</p>
-<div class="cp"><span>&copy; 2026 IronPipe Solutions</span><span>Okara | Lahore</span><span>All rights reserved.</span></div>
-<div class="wm" id="wm"><span>Iron</span><svg viewBox="0 0 40 20"><use href="#lg"/></svg><span>Pipe</span></div></div></footer>
-
+:root{--bg:#0b1226;--tx:#eef2ff;--mu:#a7b1cf;--ln:#26325a;--ac:#4a72ff;--c2:#12c8d6;--pn:rgba(12,18,40,.94);--sb:#0b1226;--d:'Bricolage Grotesque',Georgia,sans-serif;--f:'Geist',system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b1226;--tx:#eef2ff;--mu:#a7b1cf;--ln:#26325a;--pn:rgba(14,22,48,.95);--sb:#16224a}}
+*{box-sizing:border-box;margin:0}html,body{height:100%}body{background:var(--sb);color:var(--tx);font:400 15px/1.5 var(--f);overflow:hidden;padding-top:env(safe-area-inset-top,0)}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+header{position:fixed;top:env(safe-area-inset-top,0);left:0;right:0;z-index:5;display:flex;gap:10px;align-items:center;padding:10px 14px;background:var(--pn);border-bottom:1px solid var(--ln);backdrop-filter:blur(10px)}
+.brand{font:700 18px var(--d);white-space:nowrap}.brand i{color:var(--ac);font-style:normal}
+nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}nav button{flex:none;font:500 13px var(--f);color:var(--tx);background:none;border:1px solid var(--ln);border-radius:30px;padding:5px 13px;cursor:pointer}nav button:hover,nav button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+a{color:var(--c2)}a:focus-visible,button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+#hint{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0));z-index:4;background:var(--pn);border:1px solid var(--ln);border-radius:14px;padding:9px 14px;font-size:13px;color:var(--mu);max-width:260px}
+#act{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0));transform:translateX(-50%);z-index:4;font:500 15px var(--f);background:var(--ac);color:#fff;border:0;border-radius:40px;padding:12px 24px;cursor:pointer;box-shadow:0 14px 34px -12px rgba(39,80,255,.8);display:none}
+#pn{position:fixed;z-index:6;right:16px;top:calc(66px + env(safe-area-inset-top,0));bottom:16px;width:min(580px,calc(100% - 32px));background:var(--pn);border:1px solid var(--ln);border-radius:20px;box-shadow:0 40px 90px -40px rgba(10,18,38,.6);overflow:auto;padding:26px 26px 30px;transform:translateX(112%);transition:transform .45s cubic-bezier(.2,.8,.2,1);overscroll-behavior:contain}
+#pn.on{transform:none}#x{position:sticky;top:0;float:right;font:500 13px var(--f);background:var(--tx);color:var(--bg);border:0;border-radius:30px;padding:5px 14px;cursor:pointer}
+h1,h2,h3{font:500 clamp(28px,4vw,40px)/1.08 var(--d);letter-spacing:-.03em;margin:4px 0 12px}h3{font-size:20px;letter-spacing:-.02em;margin:0 0 4px}
+p{color:var(--mu)}.lead{font-size:17px;margin-bottom:18px}.bd{display:inline-block;border:1px solid var(--ln);border-radius:30px;padding:3px 12px;font-size:13px;margin-bottom:14px}
+.role{font:500 22px var(--d);color:var(--tx);margin-bottom:10px}.it{padding:16px 0;border-top:1px solid var(--ln)}.it small{color:var(--ac);font-weight:500;font-size:13px}
+.co{color:var(--tx);font-weight:500;margin-bottom:4px}.tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.tg span,.ch button{font:400 12.5px var(--f);border:1px solid var(--ln);border-radius:30px;padding:2px 11px;background:none;color:var(--tx)}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.st b{display:block;font:500 34px var(--d);color:var(--ac);line-height:1}.st span{font-size:13px;color:var(--mu)}
+.ch{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}.ch button{cursor:pointer}.ch button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.pc{display:block;padding:12px 0;border-top:1px solid var(--ln);color:inherit;text-decoration:none}.pc:hover h3{color:var(--ac)}.pc h3{font-size:16px;word-break:break-word}.pc p{font-size:13.5px}.pc em{font-style:normal;font-size:11px;background:var(--ac);color:#fff;border-radius:20px;padding:1px 8px;margin-right:6px}
+.tm{display:flex;gap:14px;align-items:flex-start}.av{flex:none;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--c2));color:#fff;display:grid;place-items:center;font:700 18px var(--d)}
+.ct a{display:block;font:500 20px var(--d);color:var(--tx);margin:4px 0 12px;word-break:break-all}.ct small{color:var(--mu);display:block}.dis{font-size:12px;margin-top:24px}
+@media(max-width:700px){.brand{display:none}#pn{top:auto;left:8px;right:8px;width:auto;height:72vh;bottom:8px;transform:translateY(112%)}#hint{display:none}}
+#vg{position:fixed;inset:0;pointer-events:none;z-index:3;background:radial-gradient(ellipse at center,transparent 58%,rgba(10,18,38,.3))}#in{position:fixed;inset:0;z-index:20;display:grid;place-items:center;text-align:center;background:var(--bg);animation:fo 1s 2.4s forwards}@keyframes fo{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div id="vg"></div><div id="in"><div><h1>Nasir Mehmood</h1><p>DevOps Engineer &amp; Cloud Infrastructure Specialist</p><p style="margin-top:10px">Entering the IronPipe office…</p></div></div><canvas id="c" aria-label="3D office. Use arrow keys, WASD or tap to walk."></canvas>
+<header><span class="brand">Nasir<i>.</i>Mehmood</span><nav id="nav"></nav></header>
+<div id="hint">Walk with arrow keys or WASD, or tap the floor. Scroll to zoom. Click or press any key to start sound.</div>
+<button id="act"></button><aside id="pn" aria-live="polite"></aside>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>
-const U="https://github.com/nasirbloch323/";
-const P=[
-["Flask-AWS-EKS-FULL-PROJECT","Flask app on AWS EKS with Jenkins, Helm and ArgoCD, full CI/CD and GitOps.","k","Jenkins, Helm, ArgoCD"],
-["Flask-Todo-K8s-Helm-Argo-CD-Image-Updater","Flask Todo deployed with Helm, ArgoCD and Argo CD Image Updater.","k","Helm, ArgoCD"],
-["flask-Todo-App-Helm","Flask app packaged with Docker, Kubernetes and Helm.","k","Python, Helm",1],
-["helm_k8s","Helm charts used with ArgoCD, Argo Image Updater and an EKS cluster.","k","Helm, EKS"],
-["ThreeTier-app-with-K8s","Three-tier application deployed on Kubernetes.","k","Kubernetes"],
-["Two-Tier-Architecture-on-Kubernetes-with-ConfigMap-Secrets","Secure two-tier architecture using ConfigMaps and Secrets.","k","ConfigMap, Secrets"],
-["Two-tier-application-K8S-KIND","Getting-started two-tier app on Kubernetes with KIND.","k","KIND"],
-["two-tier-app-using-docker-network","Two-tier app connected through Docker networking.","k","Docker"],
-["Deployed-a-Secure-Two-Tier-Architecture-on-Kubernetes-KIND-via-AWS-","Secure two-tier architecture on KIND, deployed via AWS.","k","KIND, AWS"],
-["Kubernetes-Setup-on-AWS-EC2-KIND-","KIND Kubernetes cluster setup on an AWS EC2 instance.","k","KIND, EC2",1],
-["Kubernetes-Role-Based-Access-Control-RBAC-with-Namespace-Cluster-Scope-on-a-Kind-Cluster-in-AWS-EC2","RBAC at namespace and cluster scope on a KIND cluster in EC2.","k","RBAC, Shell"],
-["kubestarter","Getting-started labs for learning Kubernetes.","k","Shell"],
-["EduConnect-MERN-k8s","AI-powered Spring Boot banking-style app with Docker, CI/CD and Kubernetes.","k","Spring Boot, K8s"],
-["LLM_MODEL-K8S","LLM model deployment on Kubernetes.","k","Kubernetes, LLM"],
-["AI-Bank-DeVops","Kubernetes, Ollama, Docker and Docker Compose starter.","k","Ollama, Docker"],
-["jenkins-shared-lib","Reusable Jenkins shared library for pipelines.","c","Groovy, Jenkins",1],
-["Jenkins-installation-","Jenkins installation guide and scripts.","c","Jenkins",1],
-["Ansible_Collection_Jenkins","Different ways to set up Jenkins using Ansible collections.","c","Ansible, Jinja"],
-["Django-Notes-App-CI-CD-Pipeline-with-Jenkins-Docker-creditional-both-","CI/CD linking Docker Hub and GitHub with automatic triggers.","c","Jenkins, Docker"],
-["Django-Notes-App-CI-CD-with-Jenkins-on-AWS-EC2-Ubuntu-","Django Notes App CI/CD with Jenkins on AWS EC2.","c","Jenkins, EC2"],
-["Cinema-booking_pipline_docekr_compose-mutistage-jave","Cinema booking app with a Docker Compose multi-stage Java pipeline.","c","Java, Compose"],
-["Three-tierApp-with-docker-compose-shared-lib","Three-tier app using Docker Compose and a Jenkins shared library.","c","Compose, Jenkins"],
-["AWS","Collection covering EC2, VPC, S3, ECR, EKS and volumes.","a","AWS"],
-["AWS-ECS-Fargate-with-Docker-ECR_CLI","ECS Fargate deployment with Docker and ECR through the CLI.","a","ECS, ECR"],
-["Automating-EC2-S3-Setup-with-IAM-via-AWS-CLI","Automated EC2 and S3 setup with IAM roles using the AWS CLI.","a","AWS CLI, IAM"],
-["Heart-RateMonitor-ECR","Heart-rate monitor app containerised and pushed to ECR.","a","Python, ECR"],
-["Django-Poll-App-Secure-Docker-ECR-","Django Poll app secured and deployed with Docker and ECR.","a","Django, ECR"],
-["Terraform","One-stop Terraform resources for DevOps engineers.","i","HCL"],
-["Ansible","Ansible Galaxy, Jinja2 and Ansible fundamentals.","i","Ansible"],
-["Bash-Scripting-Intermediate-Projects","Intermediate Bash scripting projects.","s","Shell"],
-["Error_Handling_BashScrpting","Error handling techniques in Bash.","s","Shell"],
-["Server-Maintenance-with-cronjob","Automated backups by time, day and month using cron.","s","Cron, Shell"],
-["devops-automation-scripts","Collection of DevOps automation scripts.","s","Shell"],
-["docker-load-balancer","Nginx load balancer distributing traffic across Node.js instances.","s","Nginx, Docker"],
-["django-ecommerce-book-docker","Online bookshop built with Django 3.","d","Django, Docker"],
-["django-notes-app-Docker","Dockerised Django Notes App.","d","Django, Docker"],
-["django-todo-TODO-App-with-Docker-Volumes","Django Todo app using Docker volumes.","d","Django, Volumes"],
-["django-book-sharing","Book rating, review and bookshelf app in Django.","d","Django"],
-["College-ERP-Devops","Django College ERP: attendance, marks and timetable.","d","Django"],
-["task-manager-devops","Dockerised Flask Task Manager behind an Nginx reverse proxy.","d","Flask, Nginx"],
-["GPA-Calculator-Docker-Size-reduce","GPA Calculator with a reduced Docker image size.","d","Docker, Python"],
-["Ecommerce-Docker_file","E-commerce storefront (HTML, CSS, JS) containerised with Docker.","d","Docker"],
-["Nft_Landing_page-with-Docker","NFT landing page containerised with Docker.","d","Docker"],
-["Movie-Recommendation-AI-Bot","AI-based movie recommendation bot.","m","Jupyter"],
-["Recommendation-System","General recommendation system project.","m","Jupyter"],
-["gpt4free","Fork of GPT4Free, a collection of language model integrations.","m","Python"],
-["Car-price-prediction","Car price prediction machine learning model.","m","Jupyter",1],
-["Ai-face-project-use-Machine-Learning-","Face recognition project using machine learning.","m","ML"],
-["90DaysOfDevOps","90-day DevOps community learning challenge.","l","Shell"],
-["30-Days-Of-DevOps","30 days of DevOps content based on DevOps Shack.","l","DevOps"],
-["100-days-of-code-python","100 Days of Code, Python Pro Bootcamp exercises.","l","Python"],
-["devops-portfolio","Personal DevOps portfolio site.","l","HTML"],
-["nasirbloch323","GitHub profile README that updates the project table daily.","l","Profile"],
-["plagsim-checker","Plagiarism similarity checker tool.","l","Python"]
-];
+const $=s=>document.querySelector(s),U='https://github.com/nasirbloch323/';
+const P=`Flask-AWS-EKS-FULL-PROJECT|Flask app on AWS EKS with Jenkins, Helm and ArgoCD, full CI/CD and GitOps.|k
+Flask-Todo-K8s-Helm-Argo-CD-Image-Updater|Flask Todo deployed with Helm, ArgoCD and Argo CD Image Updater.|k
+flask-Todo-App-Helm|Flask app packaged with Docker, Kubernetes and Helm.|k|1
+helm_k8s|Helm charts used with ArgoCD, Argo Image Updater and an EKS cluster.|k
+ThreeTier-app-with-K8s|Three-tier application deployed on Kubernetes.|k
+Two-Tier-Architecture-on-Kubernetes-with-ConfigMap-Secrets|Secure two-tier architecture using ConfigMaps and Secrets.|k
+Two-tier-application-K8S-KIND|Getting-started two-tier app on Kubernetes with KIND.|k
+two-tier-app-using-docker-network|Two-tier app connected through Docker networking.|k
+Deployed-a-Secure-Two-Tier-Architecture-on-Kubernetes-KIND-via-AWS-|Secure two-tier architecture on KIND, deployed via AWS.|k
+Kubernetes-Setup-on-AWS-EC2-KIND-|KIND Kubernetes cluster setup on an AWS EC2 instance.|k|1
+Kubernetes-Role-Based-Access-Control-RBAC-with-Namespace-Cluster-Scope-on-a-Kind-Cluster-in-AWS-EC2|RBAC at namespace and cluster scope on a KIND cluster in EC2.|k
+kubestarter|Getting-started labs for learning Kubernetes.|k
+EduConnect-MERN-k8s|AI-powered Spring Boot banking-style app with Docker, CI/CD and Kubernetes.|k
+LLM_MODEL-K8S|LLM model deployment on Kubernetes.|k
+AI-Bank-DeVops|Kubernetes, Ollama, Docker and Docker Compose starter.|k
+jenkins-shared-lib|Reusable Jenkins shared library for pipelines.|c|1
+Jenkins-installation-|Jenkins installation guide and scripts.|c|1
+Ansible_Collection_Jenkins|Different ways to set up Jenkins using Ansible collections.|c
+Django-Notes-App-CI-CD-Pipeline-with-Jenkins-Docker-creditional-both-|CI/CD linking Docker Hub and GitHub with automatic triggers.|c
+Django-Notes-App-CI-CD-with-Jenkins-on-AWS-EC2-Ubuntu-|Django Notes App CI/CD with Jenkins on AWS EC2.|c
+Cinema-booking_pipline_docekr_compose-mutistage-jave|Cinema booking app with a Docker Compose multi-stage Java pipeline.|c
+Three-tierApp-with-docker-compose-shared-lib|Three-tier app using Docker Compose and a Jenkins shared library.|c
+AWS|Collection covering EC2, VPC, S3, ECR, EKS and volumes.|a
+AWS-ECS-Fargate-with-Docker-ECR_CLI|ECS Fargate deployment with Docker and ECR through the CLI.|a
+Automating-EC2-S3-Setup-with-IAM-via-AWS-CLI|Automated EC2 and S3 setup with IAM roles using the AWS CLI.|a
+Heart-RateMonitor-ECR|Heart-rate monitor app containerised and pushed to ECR.|a
+Django-Poll-App-Secure-Docker-ECR-|Django Poll app secured and deployed with Docker and ECR.|a
+Terraform|One-stop Terraform resources for DevOps engineers.|i
+Ansible|Ansible Galaxy, Jinja2 and Ansible fundamentals.|i
+Bash-Scripting-Intermediate-Projects|Intermediate Bash scripting projects.|s
+Error_Handling_BashScrpting|Error handling techniques in Bash.|s
+Server-Maintenance-with-cronjob|Automated backups by time, day and month using cron.|s
+devops-automation-scripts|Collection of DevOps automation scripts.|s
+docker-load-balancer|Nginx load balancer distributing traffic across Node.js instances.|s
+django-ecommerce-book-docker|Online bookshop built with Django 3.|d
+django-notes-app-Docker|Dockerised Django Notes App.|d
+django-todo-TODO-App-with-Docker-Volumes|Django Todo app using Docker volumes.|d
+django-book-sharing|Book rating, review and bookshelf app in Django.|d
+College-ERP-Devops|Django College ERP: attendance, marks and timetable.|d
+task-manager-devops|Dockerised Flask Task Manager behind an Nginx reverse proxy.|d
+GPA-Calculator-Docker-Size-reduce|GPA Calculator with a reduced Docker image size.|d
+Ecommerce-Docker_file|E-commerce storefront (HTML, CSS, JS) containerised with Docker.|d
+Nft_Landing_page-with-Docker|NFT landing page containerised with Docker.|d
+Movie-Recommendation-AI-Bot|AI-based movie recommendation bot.|m
+Recommendation-System|General recommendation system project.|m
+gpt4free|Fork of GPT4Free, a collection of language model integrations.|m
+Car-price-prediction|Car price prediction machine learning model.|m|1
+Ai-face-project-use-Machine-Learning-|Face recognition project using machine learning.|m
+90DaysOfDevOps|90-day DevOps community learning challenge.|l
+30-Days-Of-DevOps|30 days of DevOps content based on DevOps Shack.|l
+100-days-of-code-python|100 Days of Code, Python Pro Bootcamp exercises.|l
+devops-portfolio|Personal DevOps portfolio site.|l
+nasirbloch323|GitHub profile README that updates the project table daily.|l
+plagsim-checker|Plagiarism similarity checker tool.|l`.split('\n').map(l=>l.split('|'));
 const F={"Flask-AWS-EKS-FULL-PROJECT":["End-to-End Flask App on AWS EKS with ArgoCD","Full CI/CD + GitOps deployment on AWS EKS using Jenkins pipelines, Helm manifests packaging, and ArgoCD Image Updater for continuous delivery.","Jenkins, Helm, ArgoCD, AWS EKS"],
 "jenkins-shared-lib":["Reusable Jenkins Pipeline Shared Library","Modular Groovy shared library for multi-branch Jenkins CI/CD pipelines, integrating Docker Hub authentication and AWS EC2 dynamic build agents.","Groovy, Jenkins, Docker"],
 "Deployed-a-Secure-Two-Tier-Architecture-on-Kubernetes-KIND-via-AWS-":["Secure Two-Tier K8s KIND Cluster on AWS EC2","Secure Flask + MySQL architecture deployed on a KIND Kubernetes cluster in AWS EC2, featuring Kubernetes Secrets, ConfigMaps, and RBAC policies.","Kubernetes, KIND, AWS EC2, RBAC"],
 "Ansible_Collection_Jenkins":["Ansible Server Provisioning & Jinja Setup","Automated server provisioning, application packaging, and software environment configuration using Ansible Galaxy collections and Jinja2 templates.","Ansible, Jinja2, Linux"],
 "EduConnect-MERN-k8s":["AI-Powered Banking Spring Boot Microservices","End-to-end containerized banking-style financial microservice built with Spring Boot 3 & Java 21, deployed on Kubernetes with Docker Compose setups.","Spring Boot 3, Docker, Kubernetes"],
 "Server-Maintenance-with-cronjob":["Automated Linux Backups & Shell Automation","Collection of Linux shell scripts for automated daily/monthly server maintenance, error handling, disk monitoring, and scheduled cron jobs.","Shell Scripting, Cron Jobs, Linux"]};
-const $=(s,c=document)=>[...c.querySelectorAll(s)],H=(i,h)=>document.getElementById(i).innerHTML=h;
-const C={k:"Kubernetes",c:"CI/CD",a:"AWS and cloud",i:"Infrastructure as code",s:"Shell and automation",d:"Django and web apps",m:"AI and ML",l:"Learning"};
-document.getElementById('cnt').dataset.n=P.length;
-const st0=["AWS Region: us-east-1 (N. Virginia)","IronPipe Cluster: Operational","Public Repos: "+P.length+" Documented","Uptime: 99.99%","Security: Compliant"];
-H('mqd',[...st0,...st0,...st0,...st0].map(t=>`<span>${t}</span>`).join(''));
-H('nds','<div class="flow"></div>'+[["Route 53 & IGW","DNS Failover & Public Internet Ingress Gateway","Latency: 4ms"],["AWS ALB Ingress","SSL Termination & Multi-AZ Traffic Distribution","TLS 1.3 Active"],["Amazon EKS Cluster","Managed Kubernetes Nodes with ArgoCD & Helm","Nodes: Ready"],["Private Subnet DBs","Multi-AZ RDS MySQL, MongoDB & Secrets Manager","Encrypted (KMS)"]].map(([t,d,c],i)=>`<div class="nd"><i class="dot"></i><h4>${t}</h4><p>${d}</p><span class="chip">${c}</span></div>`).join(''));
-H('svc',[["AWS Cloud Infrastructure","Architecting secure, resilient VPCs, EC2 clusters, S3 buckets, EKS nodes, IAM roles, and CloudWatch telemetry."],["Kubernetes & Docker Solutions","Multi-stage Docker builds, KIND/EKS deployments, Helm charts packaging, and ConfigMaps/Secrets management."],["GitOps & CI/CD Pipelines","Building dynamic Jenkins multi-branch pipelines, Shared Libraries, GitHub Actions, and automated ArgoCD GitOps delivery."],["Terraform & Ansible IaC","Writing modular Terraform/OpenTofu configurations for AWS resources and Ansible playbooks for server configuration."],["Linux Administration & Shelling","Enterprise Linux hardening, automated Bash/Shell scripting, cron job automated backups, and log monitoring."],["Microservices & Web Apps","Containerizing Python/Django, Flask, Spring Boot, Node.js applications with Nginx reverse proxies and MySQL/MongoDB."]].map(([t,d])=>`<div class="it hl"><h3>${t}</h3><p>${d}</p></div>`).join(''));
-$('#exw')[0].insertAdjacentHTML('beforeend',[["Apr 2026 - Present","DevOps Engineer","MISE Academy","Architecting automated CI/CD pipelines using Jenkins, Docker, Kubernetes, and AWS (EC2, EKS). Utilizing Terraform, Ansible, Helm, and Argo CD for infrastructure automation and GitOps deployments."],["Oct 2025 - Present · Part-time","Associate DevOps Engineer","Hexa Devs (Remote - Sahiwal District, Pakistan)","Managing and maintaining Linux & Windows servers, user access, system security, networking, backups, monitoring, troubleshooting, and infrastructure reliability. Focused on server administration, automation, and cloud performance & uptime."],["Late 2025 - Present","Freelance DevOps Engineer <span class='fl'>Full-time</span>","Fiverr and Upwork (Remote)","Working full-time as an independent DevOps engineer for international clients: Kubernetes and Docker deployments, CI/CD pipelines, AWS infrastructure, Terraform automation, and Linux server management."],["2021 - 2026","IT Operations & Systems Experience","","Surveillance Operator, Government of Punjab (Jan-Apr 2026). Enumerator, Urban Unit (Nov 2024 - Dec 2025). Application Operator, Dynamic Sports Pvt Ltd (2021 - 2023)."]].map(([d,t,c,p])=>`<div class="ex-r hl"><div><small>${d}</small></div><div><h3>${t}</h3>${c?`<p class="co">${c}</p>`:''}<p>${p}</p></div></div>`).join(''));
-const XT=[["Jenkins","Docker","Kubernetes","AWS EKS","Terraform","Ansible","Helm","Argo CD"],["Linux","Windows Server","Networking","Backups","Monitoring"],["Kubernetes","CI/CD","AWS","Terraform","Linux"],["IT Operations","Field Data","Systems Support"]];
-$('.ex-r').forEach((r,i)=>r.firstElementChild.insertAdjacentHTML('beforeend','<div class="xt">'+XT[i].map(t=>`<span>${t}</span>`).join('')+'</div>'));
-H('tmg',[["Nasir Mehmood","Lead DevOps Engineer","4+ Years IT experience in AWS Cloud, Kubernetes Orchestration, Terraform IaC, and Jenkins CI/CD Automation.","https://github.com/nasirbloch323.png"],["Waqas Saleem","Senior DevOps Engineer","Focuses on Enterprise AWS Cloud Architecture, Multi-Region VPC Peering, and DevSecOps Compliance.","waqas.jpg"],["Qamar Kaif","Junior DevOps Engineer","Specializes in Docker containerization, Shell automation scripting, and GitHub Actions CI/CD workflows.","kaif.jpg"],["Ahmad Fraz","Junior DevOps Engineer","Dedicated to Linux Server Administration, Nginx Load Balancing, and Kubernetes cluster health monitoring.","ahmad.jpg"]].map(([n,r,b,i],k)=>`<div class="tmc"><div class="ph"><img src="${i}" alt="${n}" loading="lazy" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=${n.replace(' ','+')}&background=e2e2e6&color=0e0e10&size=480'"></div><h3>${n}</h3><p class="co">${r}${k?'':' (Team Lead)'}</p><p>${b}</p>${k?'':'<nav><a href="https://github.com/nasirbloch323" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/nasir-mehmood-041908205" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:nasirbloch323@gmail.com">Email</a></nav>'}</div>`).join(''));
-H('crt',[["CKA (Certified Kubernetes Administrator)","Whizlabs (In Prep / Jul 2026)","Kubernetes"],["OpenTofu Infrastructure Practitioner","Linux Foundation (2026)","OpenTofu"],["Kubernetes Orchestration & Docker Labs","KodeKloud (Jul 2026)","KodeKloud"],["AWS DevOps & Linux Shell Scripting","MaximyzCloud & Coursera","AWS & Linux"]].map(([t,o,g])=>`<div class="rw hl"><div><h4>${t}</h4><p>${o}</p></div><span>${g}</span></div>`).join(''));
-const chips=document.getElementById('chips'),pg=document.getElementById('pg');
-function show(f){pg.innerHTML=P.filter(p=>f==='all'||p[2]===f).map(p=>{const o=F[p[0]];return `<a class="pc hl" href="${U+p[0]}" target="_blank" rel="noopener">${o?'<em>Featured</em>':''}<h4>${o?o[0]:p[0].replace(/[-_]+$/,'')}${p[4]?' ★':''}</h4><p>${o?o[1]:p[1]}</p><small>${o?o[2]:p[3]}</small></a>`}).join('');
- [...chips.children].forEach(b=>b.classList.toggle('on',b.dataset.f===f))}
-chips.innerHTML=`<button data-f="all">All ${P.length}</button>`+Object.entries(C).map(([k,v])=>`<button data-f="${k}">${v} ${P.filter(p=>p[2]===k).length}</button>`).join('');
-chips.onclick=e=>{if(e.target.dataset.f)show(e.target.dataset.f)};show('all');
-</script>
-<script>
-(function(){
-const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;if(RM)document.documentElement.classList.add('rm');
-const TD={aws:[["$ aws eks update-kubeconfig --region us-east-1 --name prod-cluster","s"],["Updated context arn:aws:eks:us-east-1:123456789:cluster/prod-cluster in ~/.kube/config","m"],["$ aws ec2 describe-instances --filters Name=tag:Environment,Values=Production","s"],["INSTANCES: i-0a892b1cd4 (State: running, Type: t3.xlarge)","g"],["✔ IronPipe Cloud Infrastructure synchronized across AZs.","g"]],
-k8s:[["$ kubectl get pods -n production -o wide","s"],["flask-api-7b89f4b-1   1/1  Running  0  12d  10.0.2.14","m"],["flask-api-7b89f4b-2   1/1  Running  0  12d  10.0.2.19","m"],["$ helm upgrade --install flask-app ./chart -n production","s"],["Release 'flask-app' upgraded via ArgoCD Image Updater!","g"]],
-tf:[["$ terraform plan -out=aws-prod.tfplan","s"],["aws_vpc.main_vpc: Refreshing state...","m"],["aws_eks_cluster.prod: Refreshing state...","m"],["Plan: 0 to add, 2 to change, 0 to destroy.","y"],["$ terraform apply aws-prod.tfplan","s"],["Apply complete! Resources: 0 added, 2 changed, 0 destroyed.","g"]]};
-let cur='aws',li=0,ci=0,tmr;const box=document.getElementById('tc');
-function run(){clearTimeout(tmr);if(RM){box.innerHTML=TD[cur].map(([t,c])=>`<p class="${c}">${t}</p>`).join('');return}
- if(li>=TD[cur].length){tmr=setTimeout(()=>{box.innerHTML='';li=0;ci=0;run()},5000);return}
- const [t,c]=TD[cur][li];let p=box.children[li];if(!p){p=document.createElement('p');p.className=c+' t';box.appendChild(p)}
- if(ci<t.length){p.textContent=t.slice(0,++ci);tmr=setTimeout(run,t[0]==='$'?24:8)}else{p.classList.remove('t');li++;ci=0;tmr=setTimeout(run,260)}}
-$('.tb button').forEach(b=>b.onclick=()=>{cur=b.dataset.t;li=ci=0;box.innerHTML='';$('.tb button').forEach(x=>x.classList.toggle('on',x===b));run()});run();
-if(!(window.gsap&&window.THREE&&window.ScrollTrigger)){document.getElementById('ld').style.display='none';return}
-gsap.registerPlugin(ScrollTrigger);
-/* 3D drone */
-const cv=document.getElementById('dr3'),R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,1.5));
-const S=new THREE.Scene(),Cam=new THREE.PerspectiveCamera(30,1,.1,60);Cam.position.set(0,2.6,10.5);Cam.lookAt(0,0,0);
-S.add(new THREE.HemisphereLight(0xffffff,0x8d93a3,.95));const d1=new THREE.DirectionalLight(0xffffff,1.15);d1.position.set(4,7,5);S.add(d1);const d2=new THREE.DirectionalLight(0xbfe6ff,.7);d2.position.set(-6,2,-4);S.add(d2);
-const M=new THREE.MeshStandardMaterial({color:0xf2f3f6,metalness:.35,roughness:.3}),D=new THREE.MeshStandardMaterial({color:0x20242b,metalness:.5,roughness:.4}),G=new THREE.Group();S.add(G);
-const body=new THREE.Mesh(new THREE.SphereGeometry(1,40,28),M);body.scale.set(1.25,.46,1);G.add(body);
-const cap=new THREE.Mesh(new THREE.SphereGeometry(.7,32,20),M);cap.scale.set(1,.4,.8);cap.position.y=.28;G.add(cap);
-[-.28,.28].forEach(x=>{const e=new THREE.Mesh(new THREE.SphereGeometry(.09,16,12),D);e.position.set(x,.02,.93);G.add(e)});
-const gb=new THREE.Group();gb.position.set(0,-.42,.55);G.add(gb);gb.add(new THREE.Mesh(new THREE.SphereGeometry(.3,28,20),D));
-const ln=new THREE.Mesh(new THREE.SphereGeometry(.13,20,14),new THREE.MeshStandardMaterial({color:0x6fdcee,emissive:0x1aa6c0,emissiveIntensity:.8}));ln.position.set(0,-.03,.24);gb.add(ln);
-const piv=[],rotors=[];
-[[1,1],[1,-1],[-1,1],[-1,-1]].forEach(([sx,sz])=>{const p=new THREE.Group();p.position.set(sx*.8,.08,sz*.5);p.userData={a0:Math.atan2(-sz*.62,sx),a1:Math.atan2(-sz,sx*.18)};
- const a=new THREE.Mesh(new THREE.BoxGeometry(1.7,.1,.17),M);a.position.x=.85;const mo=new THREE.Mesh(new THREE.CylinderGeometry(.14,.14,.22,18),D);mo.position.set(1.7,.08,0);
- const r=new THREE.Group();r.position.set(1.7,.24,0);r.add(new THREE.Mesh(new THREE.CylinderGeometry(.85,.85,.012,44),new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.26})));r.add(new THREE.Mesh(new THREE.BoxGeometry(1.65,.02,.09),new THREE.MeshStandardMaterial({color:0x9aa0ab})));
- p.add(a,mo,r);G.add(p);piv.push(p);rotors.push(r);const lg=new THREE.Mesh(new THREE.BoxGeometry(.07,.62,.07),D);lg.position.set(sx*.62,-.5,sz*.42);lg.rotation.z=-sx*.18;G.add(lg)});
-const sd={rot:-.7,fold:0,x:0,y:0,s:1,o:1,i:1,tx:0,ty:0};
-function fit(){const w=cv.clientWidth,h=cv.clientHeight;if(w){R.setSize(w,h,false);Cam.aspect=w/h;Cam.updateProjectionMatrix()}}addEventListener('resize',fit);fit();
-function draw(k){G.rotation.set(.2+sd.ty*.2,sd.rot+sd.tx*.35,Math.sin(k*1.1)*.03);G.position.set(sd.x,sd.y+Math.sin(k*1.6)*.12,0);G.scale.setScalar(sd.s);
- piv.forEach(p=>p.rotation.y=p.userData.a0+(p.userData.a1-p.userData.a0)*sd.fold);cv.style.opacity=sd.o*sd.i;R.render(S,Cam)}
-if(RM){draw(0);return}
-(function loop(t){rotors.forEach((r,i)=>r.rotation.y+=.6*(1-sd.fold*.85)*(i%2?-1:1));if(sd.o*sd.i>.01&&!document.hidden)draw(t/1000);requestAnimationFrame(loop)})(0);
-/* smooth scroll */
-let L=null;if(window.Lenis){L=new Lenis({lerp:.09});L.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>L.raf(t*1000));gsap.ticker.lagSmoothing(0);
- L.on('scroll',({velocity:v})=>gsap.timeline({overwrite:true}).to('.mq',{skewX:gsap.utils.clamp(-7,7,-v*.6),duration:.2}).to('.mq',{skewX:0,duration:.9,ease:'power3.out'}))}
-$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();closeM();L?L.scrollTo(t,{offset:-10}):t.scrollIntoView({behavior:'smooth'})}}));
-/* menu */
-const mn=document.getElementById('menu'),CP=(r)=>`circle(${r} at calc(100% - 50px) 36px)`;
-function openM(){gsap.set(mn,{visibility:'visible'});gsap.to(mn,{clipPath:CP('160vmax'),duration:1.1,ease:'power4.inOut'});gsap.fromTo('#menu a',{yPercent:110},{yPercent:0,stagger:.06,duration:.9,ease:'power4.out',delay:.35});document.getElementById('mb').setAttribute('aria-expanded',true)}
-function closeM(){gsap.to(mn,{clipPath:CP('0px'),duration:.8,ease:'power4.inOut',onComplete:()=>gsap.set(mn,{visibility:'hidden'})});document.getElementById('mb').setAttribute('aria-expanded',false)}
-document.getElementById('mb').onclick=openM;document.getElementById('mx').onclick=closeM;
-/* cursor + magnetic */
-if(matchMedia('(pointer:fine)').matches){const c=document.getElementById('cur'),qx=gsap.quickTo(c,'x',{duration:.4,ease:'power3'}),qy=gsap.quickTo(c,'y',{duration:.4,ease:'power3'});
- addEventListener('mousemove',e=>{qx(e.clientX);qy(e.clientY);gsap.to(sd,{tx:(e.clientX/innerWidth-.5)*2,ty:(e.clientY/innerHeight-.5)*2,duration:1.4,overwrite:'auto'})});
- document.addEventListener('mouseover',e=>{const t=e.target.closest('a,button');gsap.to(c,{scale:t?(t.classList.contains('pc')?2.6:1.9):1,duration:.35})});
- $('.btn,.ex').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4})});b.addEventListener('mouseleave',()=>gsap.to(b,{x:0,y:0,duration:.7,ease:'elastic.out(1,.4)'}))})}
-/* line splitting */
-function split(el){if(!el._t)el._t=el.textContent.trim().replace(/\s+/g,' ');el.innerHTML=el._t.split(' ').map(w=>`<span class="sw2">${w}</span>`).join(' ');
- const rows=[];let top=null;$('.sw2',el).forEach(w=>{const t=w.offsetTop;if(top===null||Math.abs(t-top)>4){rows.push([]);top=t}rows[rows.length-1].push(w.textContent)});
- el.innerHTML=rows.map(r=>`<span class="ln"><span class="li">${r.map(w=>`<span class="wd">${w}</span>`).join(' ')}</span></span>`).join('');return $('.wd',el)}
-function init(){
- const ex='#menu,#ld,.mq,.tm,.pc,header,.lead,.dot,.chip';
- const O=$('h1,h2,h3,h4,p,.co,small,.bd,.bgs span').filter(e=>!e.children.length&&e.textContent.trim()&&!e.closest(ex)).map(el=>({el,hero:!!el.closest('#hero')}));
- const build=o=>{o.lines=split(o.el);gsap.set(o.lines,{yPercent:o.shown?0:118,rotate:o.shown||o.hero?0:7})};
- O.forEach(o=>{build(o);if(!o.hero)ScrollTrigger.create({trigger:o.el,start:'top 93%',once:true,onEnter:()=>{o.shown=1;gsap.to(o.lines,{yPercent:0,rotate:0,duration:1.1,ease:'power4.out',stagger:.05})}})});
- const mixed=$('h3,small,.co,p,.bd').filter(e=>e.children.length&&!e.closest(ex+',#mqd'));mixed.forEach(e=>gsap.from(e,{y:40,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:e,start:'top 93%'}}));
- $('.lead').forEach(el=>{el.innerHTML=('>'+el.innerHTML+'<').replace(/>([^<]+)</g,(m,t)=>t.trim()?'>'+t.trim().split(/\s+/).map(w=>`<span class="sw2" style="opacity:.16">${w}</span>`).join(' ')+'<':m).slice(1,-1);
-  const wd=$('.sw2',el);if(!wd.length){wd.push(...[])}
-  gsap.to(wd,{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:el,start:'top 88%',end:'bottom 55%',scrub:true}})});
- /* intro */
- const HL=O.filter(o=>o.hero&&o.el.tagName!=='SPAN').flatMap(o=>o.lines),ob=O.filter(o=>o.hero&&o.el.tagName==='SPAN').flatMap(o=>o.lines);
- gsap.set('.ex,.rib',{opacity:0});
- gsap.timeline({delay:.1}).to('#ldp',{strokeDashoffset:0,duration:1.1,ease:'power2.inOut'}).to('#ld',{yPercent:-100,duration:1,ease:'power4.inOut'},'+=.1')
-  .to(HL,{yPercent:0,duration:1.2,ease:'power4.out',stagger:.07,onComplete:()=>O.forEach(o=>o.hero&&(o.shown=1))},'-=.4').to(ob,{yPercent:0,stagger:.1,duration:1},'<.3')
-  .to('.ex',{opacity:1,stagger:.12,duration:.9},'-=.8').fromTo('.rib',{opacity:0,yPercent:20},{opacity:1,yPercent:0,duration:1.8,ease:'power3.out'},'-=1.6')
-  .from(sd,{i:0,s:.3,rot:-4,duration:2,ease:'power3.out'},'-=1.8');
- /* hero parallax + drone scroll */
- gsap.to('#hero .rib g',{y:22,x:-40,duration:4.5,yoyo:true,repeat:-1,ease:'sine.inOut'});gsap.to('#a',{attr:{x1:.35,x2:1.35},duration:6,yoyo:true,repeat:-1,ease:'sine.inOut'});gsap.to('#b',{attr:{x1:-.3,x2:.7},duration:7,yoyo:true,repeat:-1,ease:'sine.inOut'});
- gsap.to('.hc',{yPercent:-12,opacity:.2,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom 30%',scrub:true}});
- gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom 22%',scrub:1}}).to(sd,{rot:Math.PI*1.2,s:.85,y:.3,duration:1,ease:'none'}).to(sd,{rot:Math.PI*2.4,fold:1,s:.55,x:.6,y:.7,duration:1,ease:'none'}).to(sd,{o:0,duration:.4,ease:'none'});
- gsap.to('#pb',{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.2}});
- ScrollTrigger.create({start:0,end:'max',onUpdate:s=>gsap.to('header',{yPercent:s.direction===1&&s.scroll()>240?-100:0,duration:.45,overwrite:true})});
- /* lines, labels, items */
- gsap.set('.hl',{'--s':0});$('.hr').forEach(h=>gsap.fromTo(h,{scaleX:0,transformOrigin:'0 50%'},{scaleX:1,duration:1.6,ease:'power3.inOut',scrollTrigger:{trigger:h,start:'top 95%'}}));
- ScrollTrigger.batch('.hl:not(.pc)',{start:'top 94%',once:true,onEnter:b=>gsap.to(b,{'--s':1,duration:1.4,ease:'power3.inOut',stagger:.08})});
- gsap.from('.tm',{y:90,opacity:0,scale:.95,duration:1.3,ease:'power3.out',scrollTrigger:{trigger:'.tm',start:'top 90%'}});
- /* dark section */
- gsap.fromTo('#about',{clipPath:'inset(7% 3% 0% 3% round 56px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',scrollTrigger:{trigger:'#about',start:'top 98%',end:'top 15%',scrub:true}});
- $('.gl').forEach((g,i)=>gsap.to(g,{x:(i%2?-1:1)*140,y:(i%2?1:-1)*90,duration:7+i*1.5,yoyo:true,repeat:-1,ease:'sine.inOut'}));
- gsap.from('.nd',{y:70,opacity:0,stagger:.18,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'#nds',start:'top 85%'}});
- $('.nd').forEach((n,i)=>{const d=$('.dot',n)[0];d.style.left='0';gsap.from(d,{scale:0,duration:.6,ease:'back.out(3)',scrollTrigger:{trigger:n,start:'top 85%'},delay:i*.18});gsap.to(d,{boxShadow:'0 0 34px #7fe4f2',duration:1.1,yoyo:true,repeat:-1,delay:i*.3})});
- /* experience line */
- gsap.fromTo('.vl',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'#exw',start:'top 70%',end:'bottom 70%',scrub:true}});
- /* team photos */
- $('.ph').forEach(p=>{gsap.fromTo(p,{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:1.5,ease:'power4.inOut',scrollTrigger:{trigger:p,start:'top 90%'}});gsap.fromTo($('img',p),{yPercent:-9},{yPercent:0,ease:'none',scrollTrigger:{trigger:p,start:'top bottom',end:'bottom top',scrub:true}})});
- $('.blob').forEach((b,i)=>gsap.to(b,{y:-220,x:i?120:-120,ease:'none',scrollTrigger:{trigger:b.parentNode,start:'top bottom',end:'bottom top',scrub:true}}));
- $('[data-n]').forEach(el=>{const o={v:0};gsap.to(o,{v:+el.dataset.n,duration:2,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true},onUpdate:()=>el.textContent=Math.round(o.v)})});
- /* project cards */
- let pcT=[];const cards=()=>{pcT.forEach(t=>t.kill());gsap.set('#pg .pc',{opacity:0,y:44,'--s':0});pcT=ScrollTrigger.batch('#pg .pc',{start:'top 95%',once:true,onEnter:b=>gsap.to(b,{opacity:1,y:0,'--s':1,stagger:.07,duration:.9,ease:'power3.out',overwrite:true})});ScrollTrigger.refresh()};
- const _s=show;show=f=>{_s(f);cards()};cards();
- /* devops blocks */
- gsap.from('.xp',{immediateRender:false,y:70,opacity:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.xp',start:'top 92%'}});
- gsap.from('.xo',{immediateRender:false,scale:.55,opacity:0,rotate:-50,duration:1.7,ease:'power3.out',scrollTrigger:{trigger:'.xo',start:'top 92%'}});
- gsap.from('.xl',{immediateRender:false,y:50,opacity:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.xl',start:'top 96%'}});
- $('.xt').forEach(t=>gsap.from(t.children,{immediateRender:false,scale:.4,opacity:0,y:14,stagger:.07,duration:.7,ease:'back.out(2.5)',scrollTrigger:{trigger:t,start:'top 94%'}}));
- const RL=$('#rail a');RL.forEach(a=>{const t=document.querySelector(a.getAttribute('href'));ScrollTrigger.create({trigger:t,start:'top 55%',end:'bottom 55%',onToggle:v=>v.isActive&&RL.forEach(x=>x.classList.toggle('on',x===a))})});
- ScrollTrigger.create({start:0,end:'max',onUpdate:v=>document.getElementById('rail').style.setProperty('--p',v.progress)});
- gsap.from('.xst>div',{immediateRender:false,y:50,opacity:0,stagger:.12,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.xst',start:'top 90%'}});
- ScrollTrigger.create({start:700,endTrigger:'#contact',end:'top 80%',toggleClass:{targets:'#hm',className:'on'}});
- gsap.fromTo('#lp',{strokeDashoffset:1},{strokeDashoffset:0,duration:2.4,ease:'power2.inOut',scrollTrigger:{trigger:'.xlc',start:'top 82%'}});
- gsap.from('.xnd',{immediateRender:false,opacity:0,stagger:.2,duration:.6,scrollTrigger:{trigger:'.xlc',start:'top 82%'}});
- gsap.from('.xrw',{immediateRender:false,opacity:0,x:40,stagger:.08,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'#xlr',start:'top 88%'}});
- gsap.from('#pbar button',{immediateRender:false,scaleX:0,opacity:0,stagger:.08,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#pbar',start:'top 92%'}});
- gsap.from('.xk8',{immediateRender:false,y:50,opacity:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.xk8',start:'top 94%'}});
- /* wordmark */
- const wm=$('#wm span');wm.forEach(s=>{s.innerHTML=[...s.textContent].map(c=>`<span class="c">${c}</span>`).join('')});
- gsap.from('#wm .c',{yPercent:115,duration:1.3,ease:'power4.out',stagger:.07,scrollTrigger:{trigger:'#wm',start:'top 95%'}});gsap.from('#wm svg',{rotate:-360,scale:.1,duration:1.6,ease:'back.out(1.5)',scrollTrigger:{trigger:'#wm',start:'top 95%'}});
- let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{O.forEach(build);ScrollTrigger.refresh()},250)});
- addEventListener('load',()=>ScrollTrigger.refresh())}
-document.fonts.ready.then(init);
-})();
-</script>
-<script>
-(function(){
-const q=s=>[...document.querySelectorAll(s)],RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const S=q('.xs'),Pd=q('.xpd i'),dn=['pushed','passed','pushed','0 critical','synced'];let k=0;
-function step(){S.forEach((s,i)=>{s.className='xs'+(i<k?' d':i===k?' r':'');s.lastElementChild.textContent=i<k?dn[i]:i===k?'running':'queued'});const n=k<4?0:k===4?4:8;Pd.forEach((p,i)=>p.classList.toggle('n',i<n))}
-const B=q('.xbr i'),V=q('.xq b');let sec=0;
-function lv(){const v=[30+Math.random()*40,94+Math.random()*6,97+Math.random()*3];B.forEach((b,i)=>b.style.width=v[i]+'%');V.forEach((e,i)=>e.textContent=Math.round(v[i])+'%')}
-if(RM){k=7;step();lv()}else{step();setInterval(()=>{k=(k+1)%8;step()},1100);lv();setInterval(lv,1800);setInterval(()=>{sec=(sec+1)%90;document.getElementById('xdp').textContent='last deploy '+sec+'s ago'},1000)}
-})();
-</script>
-<script>document.addEventListener('mousemove',e=>{const c=e.target.closest&&e.target.closest('.pc');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}})</script><script>
-(function(){
-const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,A=250,sv=document.getElementById('xls'),rw=document.getElementById('xlr');
-const pt=t=>{const d=1+Math.sin(t)**2;return[300+A*Math.cos(t)/d,150+A*Math.sin(t)*Math.cos(t)/d]};
-const ST=[['Plan','GitHub'],['Code','Git, Python, Bash'],['Build','Docker, Jenkins'],['Test','Jenkins pipelines, shell checks'],['Release','Helm, Argo CD Image Updater'],['Deploy','Terraform, Ansible, AWS EKS'],['Operate','Kubernetes, Linux, Nginx'],['Monitor','CloudWatch, log monitoring']];
-let d='';for(let i=0;i<=240;i++){const p=pt(i/240*2*Math.PI);d+=(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)}d+='Z';
-let h='<defs><linearGradient id="xg" gradientUnits="userSpaceOnUse" x1="50" x2="550"><stop offset="0" stop-color="#2750ff"/><stop offset=".5" stop-color="#7a3cff"/><stop offset="1" stop-color="#12c8d6"/></linearGradient></defs><path d="'+d+'" fill="none" stroke="#dce2ef" stroke-width="9" opacity=".6"/><path id="lp" d="'+d+'" pathLength="1" fill="none" stroke="url(#xg)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1"/>';
-ST.forEach((x,k)=>{const p=pt((k+.5)*Math.PI/4);h+=`<g class="xnd"><circle cx="${p[0]}" cy="${p[1]}" r="10"/><text x="${p[0]}" y="${p[1]+(p[1]<150?-18:30)}">${x[0]}</text></g>`});
-if(!RM)h+='<g><circle r="15" fill="#2750ff" opacity=".22"/><circle r="6" fill="#fff" stroke="#2750ff" stroke-width="3"/><animateMotion dur="16s" repeatCount="indefinite" path="'+d+'"/></g>';
-sv.innerHTML=h;
-rw.innerHTML=ST.map(x=>`<div class="xrw"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
-const N=[...sv.querySelectorAll('.xnd')],R=[...rw.children];let hold=null;
-const set=i=>{N.forEach((n,k)=>n.classList.toggle('on',k===i));R.forEach((r,k)=>r.classList.toggle('on',k===i))};
-R.forEach((r,k)=>{r.onmouseenter=()=>{hold=k;set(k)};r.onmouseleave=()=>hold=null});
-set(0);if(!RM)setInterval(()=>{if(hold===null&&!document.hidden)set(Math.floor(sv.getCurrentTime()/2)%8)},300);
-})();
-</script><script>
-(function(){
-const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,pb=document.getElementById('pbar');
-const col=['#2750ff','#7a3cff','#0ea5b7','#d946a8','#e08a00','#16a34a','#5b7cff','#6b7388'];
-pb.innerHTML=Object.entries(C).map(([k,v],i)=>{const n=P.filter(p=>p[2]===k).length;return `<button style="--n:${n};background:${col[i]}" data-k="${k}" title="${v}: ${n}">${v} ${n}</button>`}).join('');
-pb.onclick=e=>{const b=e.target.closest('button');if(b)chips.querySelector(`[data-f="${b.dataset.k}"]`).click()};
-const pods=[...document.querySelectorAll('.xpods i')],st=document.getElementById('xk8s');
-if(!RM)setInterval(()=>{if(document.hidden)return;const p=pods[Math.floor(Math.random()*pods.length)];if(p.className)return;
-p.className='f';st.textContent='11/12 healthy, pod crashed';setTimeout(()=>{p.className='w';st.textContent='restarting pod'},900);setTimeout(()=>{p.className='';st.textContent='12/12 healthy'},1900)},2600);
-})();
-</script></body>
-</html>
+const CAT={k:'Kubernetes',c:'CI/CD',a:'AWS and cloud',i:'Infrastructure as code',s:'Shell and automation',d:'Django and web apps',m:'AI and ML',l:'Learning'};
+const LK='https://www.linkedin.com/in/nasir-mehmood-041908205';
+const items=a=>a.map(([t,d,x])=>`<div class="it"><h3>${t}</h3>${x?`<small>${x}</small>`:''}<p>${d}</p></div>`).join('');
+const tags=a=>`<div class="tg">${a.map(t=>`<span>${t}</span>`).join('')}</div>`;
+function proj(f='all'){return `<div class="ch"><button data-f="all" class="${f=='all'?'on':''}">All ${P.length}</button>${Object.entries(CAT).map(([k,v])=>`<button data-f="${k}" class="${f==k?'on':''}">${v} ${P.filter(p=>p[2]==k).length}</button>`).join('')}</div><div id="pl">${P.filter(p=>f=='all'||p[2]==f).map(p=>{const o=F[p[0]];return `<a class="pc" href="${U+p[0]}" target="_blank" rel="noopener"><h3>${o?'<em>Featured</em>'+o[0]:p[0].replace(/[-_]+$/,'')}${p[3]?' ★':''}</h3><p>${o?o[1]:p[1]}</p>${o?`<small>${o[2]}</small>`:''}</a>`}).join('')}</div>`}
+const ROOMS=[
+{n:'Reception',x:-15,z:-6,c:0xcfe0ff,h:()=>`<span class="bd">Personal portfolio: available for freelance DevOps work</span><h1>Hi, I’m Nasir Mehmood</h1><p class="role">DevOps Engineer &amp; Cloud Infrastructure Specialist</p><p>Specializing in Kubernetes (EKS/KIND), Docker, Jenkins CI/CD, GitOps (ArgoCD), Terraform/OpenTofu, Ansible, and automated Python/Bash scripting.</p><p style="margin-top:8px">Working full-time as a freelancer on Fiverr and Upwork since late 2025.</p><p style="margin-top:8px">Okara / Lahore, Pakistan · nasirbloch323@gmail.com · +92 310 3691520</p><div class="st"><div><b>54+</b><span>Public repositories documented</span></div><div><b>15+</b><span>Kubernetes projects</span></div><div><b>7+</b><span>CI/CD pipeline projects</span></div><div><b>4+</b><span>Years of IT experience</span></div></div>`},
+{n:'Architecture',x:-5,z:-6,c:0xd9ccff,h:()=>`<h2>AWS Infrastructure Architecture</h2><p class="lead">Real-time simulation of production AWS VPC, EKS Clusters, Load Balancers, and Auto-scaling groups.</p>${items([['Route 53 & IGW','DNS Failover & Public Internet Ingress Gateway','Latency: 4ms'],['AWS ALB Ingress','SSL Termination & Multi-AZ Traffic Distribution','TLS 1.3 Active'],['Amazon EKS Cluster','Managed Kubernetes Nodes with ArgoCD & Helm','Nodes: Ready'],['Private Subnet DBs','Multi-AZ RDS MySQL, MongoDB & Secrets Manager','Encrypted (KMS)']])}`},
+{n:'Services',x:5,z:-6,c:0xc6f1f3,h:()=>`<h2>IronPipe Cloud &amp; DevOps Services</h2><p class="lead">Comprehensive infrastructure automation, container orchestration, and server management.</p>${items([['AWS Cloud Infrastructure','Architecting secure, resilient VPCs, EC2 clusters, S3 buckets, EKS nodes, IAM roles, and CloudWatch telemetry.'],['Kubernetes & Docker Solutions','Multi-stage Docker builds, KIND/EKS deployments, Helm charts packaging, and ConfigMaps/Secrets management.'],['GitOps & CI/CD Pipelines','Building dynamic Jenkins multi-branch pipelines, Shared Libraries, GitHub Actions, and automated ArgoCD GitOps delivery.'],['Terraform & Ansible IaC','Writing modular Terraform/OpenTofu configurations for AWS resources and Ansible playbooks for server configuration.'],['Linux Administration & Shelling','Enterprise Linux hardening, automated Bash/Shell scripting, cron job automated backups, and log monitoring.'],['Microservices & Web Apps','Containerizing Python/Django, Flask, Spring Boot, Node.js applications with Nginx reverse proxies and MySQL/MongoDB.']])}<h2 style="margin-top:26px">DevOps Lifecycle</h2><p class="lead">The lifecycle I follow on every engagement, and the tools I use at each stage.</p>${items([['Plan','GitHub'],['Code','Git, Python, Bash'],['Build','Docker, Jenkins'],['Test','Jenkins pipelines, shell checks'],['Release','Helm, Argo CD Image Updater'],['Deploy','Terraform, Ansible, AWS EKS'],['Operate','Kubernetes, Linux, Nginx'],['Monitor','CloudWatch, log monitoring']])}`},
+{n:'Experience',x:15,z:-6,c:0xffe6c2,h:()=>`<h2>Professional Experience (4+ Years IT)</h2>${[['Apr 2026 - Present','DevOps Engineer','MISE Academy','Architecting automated CI/CD pipelines using Jenkins, Docker, Kubernetes, and AWS (EC2, EKS). Utilizing Terraform, Ansible, Helm, and Argo CD for infrastructure automation and GitOps deployments.',['Jenkins','Docker','Kubernetes','AWS EKS','Terraform','Ansible','Helm','Argo CD']],['Oct 2025 - Present · Part-time','Associate DevOps Engineer','Hexa Devs (Remote - Sahiwal District, Pakistan)','Managing and maintaining Linux & Windows servers, user access, system security, networking, backups, monitoring, troubleshooting, and infrastructure reliability. Focused on server administration, automation, and cloud performance & uptime.',['Linux','Windows Server','Networking','Backups','Monitoring']],['Late 2025 - Present','Freelance DevOps Engineer · Full-time','Fiverr and Upwork (Remote)','Working full-time as an independent DevOps engineer for international clients: Kubernetes and Docker deployments, CI/CD pipelines, AWS infrastructure, Terraform automation, and Linux server management.',['Kubernetes','CI/CD','AWS','Terraform','Linux']],['2021 - 2026','IT Operations & Systems Experience','','Surveillance Operator, Government of Punjab (Jan-Apr 2026). Enumerator, Urban Unit (Nov 2024 - Dec 2025). Application Operator, Dynamic Sports Pvt Ltd (2021 - 2023).',['IT Operations','Field Data','Systems Support']]].map(([d,t,c,p,g])=>`<div class="it"><small>${d}</small><h3>${t}</h3>${c?`<p class="co">${c}</p>`:''}<p>${p}</p>${tags(g)}</div>`).join('')}`},
+{n:'Projects',x:-15,z:6,c:0xd7f5df,h:()=>`<h2>Production Projects &amp; Demos</h2><p class="lead">Featured Repositories (54 Total)</p>${proj()}`},
+{n:'Team',x:-5,z:6,c:0xffd9ea,h:()=>`<h2>DevOps Specialists &amp; Engineers</h2><p class="lead">Engineers collaborating to deliver high-scale AWS infrastructure and CI/CD automation.</p>${[['Nasir Mehmood','Lead DevOps Engineer (Team Lead)','4+ Years IT experience in AWS Cloud, Kubernetes Orchestration, Terraform IaC, and Jenkins CI/CD Automation.'],['Waqas Saleem','Senior DevOps Engineer','Focuses on Enterprise AWS Cloud Architecture, Multi-Region VPC Peering, and DevSecOps Compliance.'],['Qamar Kaif','Junior DevOps Engineer','Specializes in Docker containerization, Shell automation scripting, and GitHub Actions CI/CD workflows.'],['Ahmad Fraz','Junior DevOps Engineer','Dedicated to Linux Server Administration, Nginx Load Balancing, and Kubernetes cluster health monitoring.']].map(([n,r,b])=>`<div class="it tm"><div class="av">${n.split(' ').map(w=>w[0]).join('')}</div><div><h3>${n}</h3><p class="co">${r}</p><p>${b}</p></div></div>`).join('')}<p style="margin-top:6px"><a href="https://github.com/nasirbloch323" target="_blank" rel="noopener">GitHub</a> · <a href="${LK}" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:nasirbloch323@gmail.com">Email</a></p>`},
+{n:'Credentials',x:5,z:6,c:0xdde3f1,h:()=>`<h2>Certifications &amp; Training</h2><p class="lead">Accredited DevOps credentials</p>${items([['CKA (Certified Kubernetes Administrator)','Whizlabs (In Prep / Jul 2026)','Kubernetes'],['OpenTofu Infrastructure Practitioner','Linux Foundation (2026)','OpenTofu'],['Kubernetes Orchestration & Docker Labs','KodeKloud (Jul 2026)','KodeKloud'],['AWS DevOps & Linux Shell Scripting','MaximyzCloud & Coursera','AWS & Linux']].map(([t,o,g])=>[t,o,g]))}<h2 style="margin-top:26px">Academic Degree</h2><p class="lead">University software engineering background</p><div class="it"><small>May 2020 - Sep 2024</small><h3>BS Software Engineering</h3><p class="co">University of Okara, Pakistan</p><p>Focused on Software Architecture, Cloud Infrastructure, Operating System Hardening, Computer Networks, and Distributed Systems.</p></div>`},
+{n:'Boss Cabin',x:15,z:6,c:0xe6cfb4,h:()=>`<h2>Let’s Build &amp; Automate Your AWS Infrastructure</h2><p class="lead">Have a cloud deployment challenge or need high-scale CI/CD pipeline automation? Get in touch with Nasir Mehmood and the IronPipe team today.</p><div class="ct"><small>Phone / WhatsApp</small><a href="tel:+923103691520">+92 310 3691520</a><small>Direct Email</small><a href="mailto:nasirbloch323@gmail.com">nasirbloch323@gmail.com</a><small>GitHub</small><a href="https://github.com/nasirbloch323" target="_blank" rel="noopener">github.com/nasirbloch323</a><small>LinkedIn</small><a href="${LK}" target="_blank" rel="noopener">linkedin.com/in/nasir-mehmood-041908205</a></div><p class="dis">IronPipe is the cloud and DevOps agency of Nasir Mehmood, working with clients through Fiverr and Upwork. Project descriptions are taken from public GitHub repositories and show hands-on learning and demonstration work. Nothing on this website is a guarantee of results.</p><p class="dis">© 2026 IronPipe Solutions · Okara | Lahore · All rights reserved.</p>`}];
+/* panel */
+const pn=$('#pn'),act=$('#act');let cur=-1,pend=-1,openI=-1;
+function open(i){openI=i;window.onRoom&&onRoom(i);pn.innerHTML='<button id="x">Close</button>'+ROOMS[i].h();pn.scrollTop=0;pn.classList.add('on');[...$('#nav').children].forEach((b,k)=>b.classList.toggle('on',k==i))}
+function close(){pn.classList.remove('on');openI=-1;[...$('#nav').children].forEach(b=>b.classList.remove('on'))}
+pn.onclick=e=>{if(e.target.id=='x')close();const f=e.target.dataset&&e.target.dataset.f;if(f){const s=pn.scrollTop;pn.querySelector('.ch').parentNode.querySelectorAll('.ch,#pl').forEach(n=>n.remove());pn.querySelector('.lead').insertAdjacentHTML('afterend',proj(f));pn.scrollTop=s}};
+act.onclick=()=>open(cur);
+$('#nav').innerHTML=ROOMS.map((r,i)=>`<button data-i="${i}">${r.n}</button>`).join('')+'<button id="sb">Start sound</button>';
+$('#nav').onclick=e=>{const i=e.target.dataset.i;if(i!=null){pend=+i;go(+i)}};
+/* scene */
+const cv=$('#c'),R=new THREE.WebGLRenderer({canvas:cv,antialias:true});
+R.setPixelRatio(Math.min(devicePixelRatio,1.75));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.25;R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;R.shadowMap.autoUpdate=false;
+const LC=c=>new THREE.Color(c).convertSRGBToLinear();
+const S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,.5,260);let zm=1,zt=1;
+S.background=LC(0x2a3358);S.fog=new THREE.FogExp2(LC(0x2a3358),.0065);
+function rs(){R.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()}addEventListener('resize',rs);rs();
+cv.addEventListener('wheel',e=>{e.preventDefault();zt=Math.max(.5,Math.min(1.6,zt*(e.deltaY>0?1.08:.92)))},{passive:false});
+S.add(new THREE.HemisphereLight(LC(0x6f86c9),LC(0x2a2a3a),.5));
+const sun=new THREE.DirectionalLight(LC(0xffb27a),.8);sun.position.set(30,17,14);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-36,right:36,top:36,bottom:-36,near:1,far:90});sun.shadow.bias=-.0005;sun.shadow.normalBias=.03;S.add(sun);
+const skyT=(()=>{const c=document.createElement('canvas');c.width=16;c.height=256;const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#070e24');gr.addColorStop(.3,'#16285a');gr.addColorStop(.44,'#b8664f');gr.addColorStop(.5,'#2a3358');gr.addColorStop(1,'#2a3358');g.fillStyle=gr;g.fillRect(0,0,16,256);const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;return t})();
+S.add(new THREE.Mesh(new THREE.SphereGeometry(230,32,16),new THREE.MeshBasicMaterial({map:skyT,side:THREE.BackSide,fog:false,depthWrite:false})));
+{const pm=new THREE.PMREMGenerator(R),es=new THREE.Scene();es.add(new THREE.Mesh(new THREE.SphereGeometry(50,32,16),new THREE.MeshBasicMaterial({map:skyT,side:THREE.BackSide})));const l=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshBasicMaterial({color:new THREE.Color().setRGB(7,4.8,3.4)}));l.position.set(25,35,15);l.lookAt(0,0,0);es.add(l);S.environment=pm.fromScene(es,.04).texture;pm.dispose()}
+/* materials and textures */
+const TXR=(d,rx,ry)=>{const c=document.createElement('canvas');c.width=c.height=256;d(c.getContext('2d'));const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rx,ry);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;return t};
+const fill=c=>g=>{g.fillStyle=c;g.fillRect(0,0,256,256)},nz=(g,n,a)=>{for(let i=0;i<n;i++){g.fillStyle=Math.random()<.5?`rgba(255,255,255,${a})`:`rgba(0,0,0,${a})`;g.fillRect(Math.random()*256,Math.random()*256,2,2)}};
+const woodD=c=>g=>{fill(c)(g);for(let i=0;i<8;i++){g.fillStyle=`rgba(${Math.random()<.5?'0,0,0':'255,255,255'},${.04+Math.random()*.08})`;g.fillRect(0,i*32,256,32);for(let j=0;j<12;j++){g.fillStyle='rgba(0,0,0,.08)';g.fillRect(0,i*32+Math.random()*32,256,1)}g.fillStyle='rgba(0,0,0,.4)';g.fillRect(0,i*32,256,1.5);g.fillRect((i*83)%256,i*32,1.5,32)}};
+const carpD=c=>g=>{fill(c)(g);nz(g,9000,.1);g.strokeStyle='rgba(0,0,0,.18)';g.strokeRect(0,0,256,256)},concD=c=>g=>{fill(c)(g);nz(g,6000,.05);g.strokeStyle='rgba(0,0,0,.14)';g.lineWidth=2;g.strokeRect(0,0,256,256)},roughD=c=>g=>{fill(c)(g);nz(g,12000,.1)};
+const marbleD=c=>g=>{fill(c)(g);nz(g,5000,.05);for(let i=0;i<9;i++){g.strokeStyle=`rgba(255,255,255,${.05+Math.random()*.08})`;g.lineWidth=1+Math.random()*1.5;g.beginPath();g.moveTo(Math.random()*256,0);g.bezierCurveTo(Math.random()*256,80,Math.random()*256,170,Math.random()*256,256);g.stroke()}g.strokeStyle='rgba(0,0,0,.35)';g.lineWidth=2;g.strokeRect(0,0,256,256)};
+const PM=(d,rx,ry,r=.8,m=0)=>{const t=TXR(d,rx,ry);return new THREE.MeshStandardMaterial({map:t,bumpMap:t,bumpScale:.6,roughness:r,metalness:m})};
+const MT={},M=(c,r=.65,m=0)=>MT[c+'_'+r+'_'+m]||(MT[c+'_'+r+'_'+m]=new THREE.MeshStandardMaterial({color:LC(c),roughness:r,metalness:m})),bmat=c=>MT['b'+c]||(MT['b'+c]=new THREE.MeshBasicMaterial({color:LC(c)}));
+const GL=new THREE.MeshStandardMaterial({color:LC(0xa8d0ee),transparent:true,opacity:.3,roughness:.05,metalness:.2,depthWrite:false});
+const SC=new THREE.MeshBasicMaterial({map:TXR(g=>{g.fillStyle='#0b1226';g.fillRect(0,0,256,256);g.fillStyle='#1d2b5c';g.fillRect(0,0,256,26);for(let i=0;i<9;i++){g.fillStyle=['#12c8d6','#7fe4a1','#6f8cff','#f0d77a'][i%4];g.fillRect(14+(i%3)*14,44+i*20,40+Math.random()*130,7)}},1,1)});
+const GM={},mk=(g,m,x,y,z,p,sh)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.castShadow=sh;o.receiveShadow=true;p.add(o);return o};
+const BG=(w,h,d)=>GM[w+'_'+h+'_'+d]||(GM[w+'_'+h+'_'+d]=new THREE.BoxGeometry(w,h,d));
+const mt=c=>typeof c=='object'?c:M(c);
+const bx=(w,h,d,c,x,y,z,p=S,sh=true)=>mk(BG(w,h,d),mt(c),x,y,z,p,sh);
+const lt=(w,h,d,c,x,y,z,p=S)=>mk(BG(w,h,d),bmat(c),x,y,z,p,false);
+const cy=(r,h,c,x,y,z,p=S,r2)=>mk(GM['c'+r+h+r2]||(GM['c'+r+h+r2]=new THREE.CylinderGeometry(r2||r,r,h,20)),mt(c),x,y,z,p,true);
+const sp=(r,c,x,y,z,p=S)=>mk(GM['s'+r]||(GM['s'+r]=new THREE.SphereGeometry(r,20,14)),mt(c),x,y,z,p,true);
+function lab(t,x,z,y=3.6,w){const c=document.createElement('canvas');c.width=512;c.height=128;const g=c.getContext('2d');g.fillStyle='rgba(10,18,38,.88)';g.beginPath();g.roundRect(8,14,496,100,50);g.fill();g.strokeStyle='#12c8d6';g.lineWidth=5;g.stroke();g.fillStyle='#fff';g.font='600 52px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(t,256,66);const tx=new THREE.CanvasTexture(c);tx.encoding=THREE.sRGBEncoding;const s=new THREE.Sprite(new THREE.SpriteMaterial({map:tx,depthTest:false,fog:false}));s.scale.set(w||(t.length>9?4.6:3.8),w?w/3.7:1.1,1);s.position.set(x,y,z);S.add(s);return s}
+function neon(t,x,y,z,w,col='#6fe3ee'){const c=document.createElement('canvas');c.width=1024;c.height=256;const g=c.getContext('2d');g.font='600 120px sans-serif';g.textAlign='center';g.textBaseline='middle';g.shadowColor=col;g.shadowBlur=40;g.fillStyle=col;g.fillText(t,512,128);g.shadowBlur=14;g.fillStyle='#fff';g.fillText(t,512,128);const tx=new THREE.CanvasTexture(c);tx.encoding=THREE.sRGBEncoding;const m=new THREE.Mesh(new THREE.PlaneGeometry(w,w/4),new THREE.MeshBasicMaterial({map:tx,transparent:true,depthWrite:false}));m.position.set(x,y,z);S.add(m);return m}
+/* world */
+const gm=PM(roughD('#2b4637'),50,50,1);bx(220,.2,220,gm,0,-.4,0,S,false);
+bx(70,.12,3.6,PM(concD('#4b505e'),20,2,.5),0,-.2,13,S,false);bx(70,.1,5.5,PM(roughD('#20232c'),20,2,.35,.1),0,-.25,17.3,S,false);for(let i=-32;i<33;i+=4)lt(1.6,.02,.2,0xe8e8e8,i,-.18,17.3);
+bx(43,.3,23,PM(concD('#2a2f3c'),12,6,.5),0,-.1,0,S,false);bx(41,.12,2.4,PM(marbleD('#3a4152'),10,2,.16,.15),0,.11,0,S,false);
+const FL=[['w','#4a3425'],['m','#232a3a'],['m','#262d3d'],['m','#2a2f3c'],['m','#232b36'],['m','#272c3a'],['w','#4a3425'],['w','#3a2a20']];
+const fl=ROOMS.map((r,i)=>mk(BG(9.6,.12,9.6),FL[i][0]=='w'?PM(woodD(FL[i][1]),4,4,.28,.1):PM(marbleD(FL[i][1]),3,3,.16,.15),r.x,.11,r.z,S,false));
+const PL=PM(roughD('#2c313f'),6,1,.7);bx(42,2.8,.4,PL,0,1.4,-11.1);bx(.4,2.8,22.4,PL,-20.9,1.4,0);bx(.4,.9,22.4,PL,20.9,.45,0);bx(18.4,.9,.4,PL,-11.8,.45,11.1);bx(18.4,.9,.4,PL,11.8,.45,11.1);
+bx(42.4,.12,.5,0x2a3040,0,.06,-11.1,S,false);
+[-15,-5,5,15].forEach(x=>{mk(BG(3.4,1.2,.06),GL,x,1.7,-10.88,S,false);bx(3.5,.08,.1,0x2a3040,x,1.1,-10.86);bx(3.5,.08,.1,0x2a3040,x,2.3,-10.86)});[-6,6].forEach(z=>mk(BG(.06,1.2,3.4),GL,-20.68,1.7,z,S,false));
+[-2.6,2.6].forEach(x=>bx(.4,3.1,.4,0x1f3a8f,x,1.55,11.1,S,true));bx(5.6,.45,.4,0x1f3a8f,0,3.3,11.1);neon('IronPipe · DevOps',0,4.6,11.3,6.4);
+[-10,10].forEach(x=>[-1.2,1.2].forEach(z=>cy(.25,2.6,0xe7eaf2,x,1.4,z)));[[-10,0x2750ff],[0,0x12c8d6],[10,0x7a3cff]].forEach(([x,c])=>{bx(1.5,1.1,.05,0x2a3040,x,1.7,-10.86);lt(1.3,.9,.02,c,x,1.7,-10.83);lt(1.3,.3,.02,0xffffff,x,1.5,-10.82)});
+/* props */
+const LEDS=[],CL=[],TR=[],WD=PM(woodD('#3a2a1f'),1,1,.22,.1),WS=PM(woodD('#2b1f17'),1,1,.35),noSh=g=>g.traverse(o=>o.castShadow=false);
+const BK=[0x2f4f9d,0x1f8fa0,0x5b3aa8,0xa8671a,0x9c3a73,0x2e7d4f];
+const grp=(x,z,r=0)=>{const g=new THREE.Group();g.position.set(x,.17,z);g.rotation.y=r;S.add(g);return g};
+function desk(x,z,r){const g=grp(x,z,r);bx(2,.06,1,WD,0,.75,0,g);cy(.04,.09,M(0xf2f2f2,.4),.7,.83,.12,g);bx(.3,.01,.4,0xf5f5f0,-.6,.785,.15,g);[[-.9,-.42],[.9,-.42],[-.9,.42],[.9,.42]].forEach(([a,b])=>bx(.05,.72,.05,M(0x2a2f3a,.4,.7),a,.36,b,g));bx(.72,.46,.04,0x111418,0,1.27,-.25,g);mk(BG(.66,.4,.02),SC,0,1.27,-.22,g,false);bx(.06,.2,.06,0x2a2f3a,0,.88,-.25,g);{const m2=new THREE.Group();m2.position.set(.76,0,-.18);m2.rotation.y=-.35;g.add(m2);bx(.72,.46,.04,0x111418,0,1.27,0,m2);mk(BG(.66,.4,.02),SC,0,1.27,.03,m2,false);bx(.06,.2,.06,0x2a2f3a,0,.88,0,m2)}bx(.05,.4,.05,M(0xb08d57,.3,.9),-.8,.97,-.3,g);lt(.3,.04,.12,0xfff0c8,-.8,1.2,-.3,g);bx(.45,.02,.16,0x1b1f27,0,.79,.15,g);bx(.5,.08,.5,0x14161b,0,.5,1.1,g);bx(.5,.55,.07,0x14161b,0,.85,1.35,g);cy(.04,.45,0x1b1f27,0,.25,1.1,g);cy(.28,.04,0x1b1f27,0,.04,1.1,g)}
+function rack(x,z){const g=grp(x,z);bx(.9,2.2,.8,M(0x1b2030,.45,.6),0,1.1,0,g);for(let i=0;i<6;i++){bx(.78,.2,.02,0x0c0f18,0,.35+i*.33,.41,g);LEDS.push(lt(.06,.04,.02,i%3?0x22c55e:0x12c8d6,.28,.35+i*.33,.43,g))}}
+function shelf(x,z){const g=grp(x,z);const w=WS;bx(2.4,2.2,.06,w,0,1.1,-.2,g);[-1.16,1.16].forEach(a=>bx(.06,2.2,.5,w,a,1.1,0,g));[.05,.75,1.45,2.15].forEach((y,j)=>{bx(2.4,.05,.5,w,0,y,0,g);if(j<3)for(let i=0;i<8;i++)bx(.2,.45+(i%3)*.06,.3,BK[(i+j*2)%6],-.95+i*.27,y+.25,0,g)})}
+function board(x,z){const g=grp(x,z);bx(3.2,1.6,.06,0xf4f4f2,0,1.7,0,g);bx(3.3,.05,.08,0x9aa0aa,0,.88,0,g);[[-1,.3,0x2f55d4],[0,-.2,0x12a8b8],[1,.3,0x6a3de0]].forEach(([a,b,c])=>lt(.8,.45,.02,c,a,1.7+b,.04,g));bx(.06,.9,.06,0x3a404c,-1.4,.45,0,g);bx(.06,.9,.06,0x3a404c,1.4,.45,0,g)}
+function table(x,z){const g=grp(x,z);bx(3.8,.07,1.5,WD,0,.95,0,g);bx(.12,.9,1.1,M(0x2a2f3a,.4,.7),-1.5,.45,0,g);bx(.12,.9,1.1,M(0x2a2f3a,.4,.7),1.5,.45,0,g);[[-1,1.25,Math.PI],[1,1.25,Math.PI],[-1,-1.25,0],[1,-1.25,0]].forEach(([a,b,r])=>{const c=new THREE.Group();c.position.set(a,0,b);c.rotation.y=r;g.add(c);bx(.5,.08,.5,0x14161b,0,.5,0,c);bx(.5,.5,.07,0x14161b,0,.8,-.23,c);cy(.04,.45,0x1b1f27,0,.25,0,c)})}
+function plant(x,z){cy(.2,.42,M(0xa8795a,.8),x,.38,z,S,.26);for(let i=0;i<7;i++){const a=i*2.4;sp(.2+(i%3)*.04,M(i%2?0x2f7a46:0x3f9a5a,.85),x+Math.cos(a)*.22,.8+(i%4)*.16,z+Math.sin(a)*.22)}}
+function person(c,x,z,t,rot=0,tr=0x232a3b){const g=new THREE.Group(),L=[],sk=M(0xd9a984,.7);cy(.19,.62,M(c,.8),0,1.2,0,g,.21);cy(.05,.1,sk,0,1.55,0,g);sp(.115,sk,0,1.68,0,g);[-.04,.04].forEach(a=>sp(.013,0x111111,a,1.695,.108,g));sp(.018,sk,0,1.665,.118,g);sp(.12,M(0x1d1a17,.9),0,1.71,-.025,g);
+[-.09,.09].forEach(a=>{const p=new THREE.Group();p.position.set(a,.92,0);g.add(p);bx(.15,.9,.18,M(tr,.8),0,-.45,0,p);bx(.17,.07,.3,0x15181f,0,-.88,.05,p);L.push(p)});
+[-.27,.27].forEach(a=>{const p=new THREE.Group();p.position.set(a,1.45,0);g.add(p);bx(.09,.58,.1,M(c,.8),0,-.29,0,p);sp(.05,sk,0,-.62,0,p);L.push(p)});
+g.position.set(x,.17,z);g.rotation.y=rot;S.add(g);g.userData.L=L;if(t)lab(t,x,z,2.45,2.4);return g}
+const NP=[];
+[(x,z)=>{bx(4.4,1,1.1,M(0x6b4f35,.5),x,.67,z-3);bx(4.7,.06,1.4,M(0xe9e4da,.25),x,1.2,z-3);mk(BG(.66,.4,.02),SC,x+1.2,1.62,z-3.2,S,false);bx(2.6,.45,1,M(0x28407a,.9),x-2.4,.4,z+3.4);bx(2.6,.8,.25,M(0x28407a,.9),x-2.4,.8,z+3.8);NP.push(person(0x3a7d8c,x,z-4.2,'Receptionist'))},
+(x,z)=>{[-3,-1.8,-.6].forEach(a=>rack(x+a,z-3.9));desk(x+2.5,z-2.5);desk(x+2.5,z+1.2)},
+(x,z)=>{board(x,z-4.5);desk(x-2.5,z-1.5);desk(x+2.5,z-1.5)},
+(x,z)=>{shelf(x,z-4.4);desk(x-2.5,z-2.5);desk(x+2.5,z-2.5)},
+(x,z)=>{desk(x-3,z-2.5);desk(x,z-2.5);desk(x+3,z-2.5);desk(x,z+1.8,Math.PI)},
+(x,z)=>{board(x,z-4.5);table(x,z)},
+(x,z)=>{shelf(x-2.5,z-4.4);shelf(x+2.5,z-4.4);desk(x,z)},
+(x,z)=>{cy(2.6,.03,PM(carpD('#7a2433'),2,2,.95),x,.2,z+.5);desk(x-1.1,z-2);desk(x+1.1,z-2);shelf(x+3,z-4.4);NP.push(person(0x1c2233,x,z-3.4,'Nasir (Boss)'))}].forEach((f,i)=>{const r=ROOMS[i];f(r.x,r.z);lab(r.n,r.x,r.z-1.4,3.3);plant(r.x-4.2,r.z+4.2);plant(r.x+4.2,r.z+4.2)});
+[-24,-14,-6,6,14,24].forEach(x=>{const g=new THREE.Group();g.position.set(x,0,14.6);S.add(g);cy(.16,1.5,M(0x6b4f3a,.95),0,.6,0,g,.22);[[0,2.3,0,1.1,0x2f6a3e],[.5,3,.2,.85,0x3f8a52],[-.5,2.8,-.3,.8,0x2a5a36],[.2,3.6,0,.6,0x4a9a5e],[-.3,3.2,.4,.7,0x357a47]].forEach(([a,b,c,r,col])=>sp(r,M(col,.95),a,b,c,g));TR.push(g)});
+[-9,9].forEach(x=>{cy(.06,3.4,M(0x2a2f3a,.4,.6),x,1.5,12.2);bx(.5,.08,.2,0x2a2f3a,x,3.25,12.2);lt(.4,.04,.15,0xfff3c8,x,3.2,12.2)});
+const cars=[[0xb3262c,16.2,1,5],[0x1f3f9a,18.4,-1,4]].map(([c,z,d,v])=>{const g=new THREE.Group();bx(2.4,.55,1.1,M(c,.3,.4),0,.55,0,g,false);bx(1.3,.5,1,M(c,.3,.4),-.1*d,1.05,0,g,false);mk(BG(1.2,.38,1.02),M(0x15202e,.1,.5),-.1*d,1.08,0,g,false);[[-.8,.5],[.8,.5],[-.8,-.5],[.8,-.5]].forEach(([a,b])=>{const w=cy(.3,.2,M(0x111111,.9),a,.3,b,g);w.rotation.x=Math.PI/2;const h=cy(.15,.22,M(0xbfc4cc,.3,.8),a,.3,b,g);h.rotation.x=Math.PI/2});[-.35,.35].forEach(b=>{lt(.06,.12,.22,0xfff3c8,1.21,.6,b,g);lt(.06,.1,.22,0xff2a2a,-1.21,.6,b,g)});g.position.set(d*-30,-.1,z);g.rotation.y=d>0?0:Math.PI;g.userData.v=d*v;S.add(g);return g});
+for(let i=0;i<7;i++){const g=new THREE.Group();for(let j=0;j<5;j++){const o=sp(2+Math.random()*2,M(0x7a7fae,1),j*2.4-4,Math.random()*.8,Math.random()*1.5,g);o.castShadow=false}g.scale.y=.5;g.position.set(-100+i*30,38+Math.random()*10,-40+Math.random()*50);S.add(g);CL.push(g)}
+const WKR=[[person(0x7a3b3b,-8,0),-18,18,0,1.1],[person(0x3b6a7a,10,.4),-18,18,.4,1.3],[person(0x6a5a2a,-20,13.4),-26,26,13.4,1.5],[person(0x4a3a7a,22,12.6),-26,26,12.6,1.2]].map(([g,a,b,z,v],i)=>{noSh(g);g.position.y=z>5?-.12:.17;g.userData.w={a,b,v:v*(i%2?-1:1),ph:Math.random()*6};return g});
+R.shadowMap.needsUpdate=true;
+const WN=PM(g=>{g.fillStyle='#2b3342';g.fillRect(0,0,256,256);for(let y=8;y<256;y+=16)for(let x=6;x<256;x+=16){g.fillStyle=Math.random()<.4?'#ffe9a8':'#46506a';g.fillRect(x,y,8,9)}},3,8,.8);
+for(let i=0;i<48;i++){const a=i/48*6.283+Math.random()*.1,r=80+Math.random()*45,w=6+Math.random()*7,h=14+Math.random()*34;bx(w,h,w,WN,Math.cos(a)*r,h/2-.4,Math.sin(a)*r+8,S,false)}
+[[-10,-6],[10,-6],[-10,6],[10,6]].forEach(([x,z])=>{const l=new THREE.PointLight(LC(0xffd9a8),1.1,24,2);l.position.set(x,3.2,z);S.add(l)});
+neon('IronPipe',-15,.62,-8.43,3.2);ROOMS.forEach(r=>{lt(9.6,.03,.06,0x12c8d6,r.x,.19,r.z-4.77);lt(.06,.03,9.6,0x4a72ff,r.x-4.77,.19,r.z)});
+{const n=500,a=new Float32Array(n*3);for(let i=0;i<n;i++){const u=Math.random()*6.283,v=.15+Math.random()*.85,q=Math.sqrt(1-v*v);a[i*3]=Math.cos(u)*q*210;a[i*3+1]=v*210;a[i*3+2]=Math.sin(u)*q*210}const gG=new THREE.BufferGeometry();gG.setAttribute('position',new THREE.BufferAttribute(a,3));S.add(new THREE.Points(gG,new THREE.PointsMaterial({size:1.4,color:0xffffff,fog:false,sizeAttenuation:false})))}
+/* me */
+const me=person(0x2f55d4,0,0),blob=new THREE.Mesh(new THREE.CircleGeometry(.45,24),new THREE.MeshBasicMaterial({color:0,transparent:true,opacity:.28,depthWrite:false}));blob.rotation.x=-Math.PI/2;S.add(blob);
+noSh(me);const you=lab('YOU',0,0,3,1.4),L=me.userData.L;S.remove(me);const mg=new THREE.Group();mg.add(me);me.position.set(0,0,0);S.add(mg);mg.position.set(0,-.12,13.5);
+/* audio */
+let AC,master,ng_,wb,muted=false;const sb=$('#sb');
+function startAudio(){if(AC||muted)return;try{AC=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return}
+ master=AC.createGain();master.gain.value=.9;master.connect(AC.destination);sb.textContent='Sound on';
+ const n=AC.sampleRate*2,b1=AC.createBuffer(1,n,AC.sampleRate),d=b1.getChannelData(0);let b=0;for(let i=0;i<n;i++){b=(b+.02*(Math.random()*2-1))/1.02;d[i]=b*3.5}
+ wb=AC.createBuffer(1,AC.sampleRate*.2,AC.sampleRate);const w=wb.getChannelData(0);for(let i=0;i<w.length;i++)w[i]=Math.random()*2-1;
+ const s=AC.createBufferSource();s.buffer=b1;s.loop=true;const lp=AC.createBiquadFilter();lp.frequency.value=320;ng_=AC.createGain();ng_.gain.value=.035;s.connect(lp);lp.connect(ng_);ng_.connect(master);s.start();
+ [220,261.63,329.63,392].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain(),lf=AC.createOscillator(),lg=AC.createGain();o.frequency.value=f;g.gain.value=.012;lf.frequency.value=.06+i*.035;lg.gain.value=.007;lf.connect(lg);lg.connect(g.gain);o.connect(g);g.connect(master);o.start();lf.start()});
+ setInterval(()=>{if(muted||document.hidden)return;for(let i=0;i<1+Math.random()*3;i++)setTimeout(()=>burst(2500+Math.random()*1500,.02,cur>=0?.03:.01),i*90+Math.random()*60)},900);
+ say('Welcome to Nasir Mehmood’s office. I am your guide. Walk around, or use the menu above to visit any room.')}
+function burst(f,dur,g){if(!AC||muted)return;const t=AC.currentTime,s=AC.createBufferSource(),fl=AC.createBiquadFilter(),gn=AC.createGain();s.buffer=wb;fl.type='bandpass';fl.frequency.value=f;gn.gain.setValueAtTime(g,t);gn.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(fl);fl.connect(gn);gn.connect(master);s.start();s.stop(t+dur+.02)}
+function tone(f,dur,g,sl){if(!AC||muted)return;const t=AC.currentTime,o=AC.createOscillator(),gn=AC.createGain();o.frequency.setValueAtTime(f,t);if(sl)o.frequency.exponentialRampToValueAtTime(sl,t+dur);gn.gain.setValueAtTime(g,t);gn.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(gn);gn.connect(master);o.start();o.stop(t+dur+.02)}
+const ding=f=>tone(f,.9,.05),thump=()=>[0,140].forEach(d=>setTimeout(()=>tone(130,.16,.22,70),d));
+function say(t){if(muted||!AC||!window.speechSynthesis)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t),v=speechSynthesis.getVoices(),f=v.find(x=>/^en[-_](GB|US)/i.test(x.lang)&&/google|natural|daniel|male/i.test(x.name))||v.find(x=>/^en/i.test(x.lang));if(f)u.voice=f;else u.lang='en-GB';u.rate=.95;u.volume=.9;speechSynthesis.speak(u)}
+const NR=['Reception. Nasir Mehmood, DevOps engineer and cloud infrastructure specialist, available for freelance work.','Architecture room. A production AWS design with Route 53, a load balancer, an E K S cluster, and private subnet databases.','Services. Cloud infrastructure, Kubernetes and Docker, C I C D pipelines, Terraform and Ansible, Linux administration, and microservices.','Experience. Over four years in I T. Now DevOps engineer at MISE Academy, with freelance work on Fiverr and Upwork.','Projects lab. Fifty four public repositories covering Kubernetes, C I C D, AWS, and automation.','Team room. Meet the IronPipe agency engineers.','Credentials. Kubernetes, OpenTofu, and AWS training, and a B S in software engineering from the University of Okara.','Boss cabin. Let us build and automate your infrastructure. Call or email Nasir to get started.'];
+window.onRoom=i=>{thump();setTimeout(()=>say(NR[i]),500)};
+sb.onclick=()=>{if(!AC){muted=false;startAudio();return}muted=!muted;sb.textContent=muted?'Sound off':'Sound on';if(muted){window.speechSynthesis&&speechSynthesis.cancel();master.gain.value=0}else master.gain.value=.9};
+['pointerdown','keydown'].forEach(ev=>addEventListener(ev,e=>{if(!e.target.id||e.target.id!='sb')startAudio()}));
+/* animation */
+const DR=[-1,1].map(s=>mk(BG(2.3,2.8,.06),GL,s*1.15,1.5,11.1,S,false));
+function scr(){const g=SC.map.image.getContext('2d');g.fillStyle='#0b1226';g.fillRect(0,0,256,256);g.fillStyle='#1d2b5c';g.fillRect(0,0,256,26);for(let i=0;i<9;i++){g.fillStyle=['#12c8d6','#7fe4a1','#6f8cff','#f0d77a'][(i+scO)%4];g.fillRect(14+((i+scO)%3)*14,44+i*20,40+((i*37+scO*53)%130),7)}SC.map.needsUpdate=true}
+let fa=.016,scO=0,scT=0,ledT=0,door=0,lastC=-1,stepT=0;
+function tick(t,dt,p,l){
+ zm+=((openI>=0?zt*.72:zt)-zm)*.05;fa+=(dt-fa)*.05;if(t>3500&&fa>.026&&R.getPixelRatio()>1){R.setPixelRatio(Math.max(1,R.getPixelRatio()-.25));rs()}TR.forEach((g,i)=>g.rotation.z=Math.sin(t/1600+i)*.012);
+ door+=((Math.abs(p.x)<5&&Math.abs(p.z-11.1)<4?1:0)-door)*.1;DR.forEach((d,i)=>d.position.x=(i?1:-1)*(1.15+door*2.3));
+ scT+=dt;if(scT>.4){scT=0;scO++;scr()}ledT+=dt;if(ledT>.2){ledT=0;LEDS.forEach(m=>{if(Math.random()<.12)m.visible=!m.visible})}
+ CL.forEach(c=>{c.position.x+=dt*.8;if(c.position.x>110)c.position.x=-110});
+ WKR.forEach(g=>{const w=g.userData.w,q=g.userData.L;g.position.x+=w.v*dt;if(g.position.x>w.b||g.position.x<w.a)w.v*=-1;g.rotation.y=w.v>0?Math.PI/2:-Math.PI/2;const s=Math.sin(t/260*Math.abs(w.v)+w.ph)*.6;q[0].rotation.x=s;q[1].rotation.x=-s;q[2].rotation.x=-s*.7;q[3].rotation.x=s*.7});
+ NP.forEach((q,i)=>{const dx=p.x-q.position.x,dz=p.z-q.position.z,d=Math.hypot(dx,dz),Q=q.userData.L;let ty=Math.sin(t/1800+i)*.2;if(d<7)ty=Math.atan2(dx,dz);q.rotation.y+=(ty-q.rotation.y)*.06;Q[3].rotation.z+=((i==0&&d<7?2.5+Math.sin(t/140)*.35:0)-Q[3].rotation.z)*.12;if(i==0)Q[2].rotation.x=Math.sin(t/90)*.08});
+ if(cur!=lastC){lastC=cur;if(cur>=0)ding(520+cur*55)}
+ if(l&&AC){stepT+=dt;if(stepT>.36){stepT=0;burst(cur>=0?1100:700,.05,.06)}}
+ if(ng_)ng_.gain.value+=((p.z>11.7?.08:.035)-ng_.gain.value)*.03}
+/* movement */
+const keys={},want=[],tg=new THREE.Vector3(),rc=new THREE.Raycaster(),pl=new THREE.Plane(new THREE.Vector3(0,1,0),0);let dn=null;
+const route=(x,z)=>{want.length=0;const o=mg.position.z>11.7,t=z>11.7;if(o&&!t)want.push([0,12.8],[0,9.8]);else if(!o&&t)want.push([0,9.8],[0,12.8]);want.push([x,z])};
+const go=i=>route(ROOMS[i].x,ROOMS[i].z+2.2),blk=(x,z)=>Math.abs(z-11.1)<.55&&Math.abs(x)>2.3;
+addEventListener('keydown',e=>{if(e.key=='Escape')close();if((e.key=='Enter'||e.key=='e')&&cur>=0&&openI<0)open(cur);keys[e.key.toLowerCase()]=1;if(e.key.startsWith('Arrow')&&openI<0)e.preventDefault()});addEventListener('keyup',e=>delete keys[e.key.toLowerCase()]);
+cv.onpointerdown=e=>dn=[e.clientX,e.clientY];cv.onpointerup=e=>{if(!dn||Math.hypot(e.clientX-dn[0],e.clientY-dn[1])>8)return;rc.setFromCamera({x:e.clientX/innerWidth*2-1,y:-(e.clientY/innerHeight)*2+1},cam);if(rc.ray.intersectPlane(pl,tg)){const z=Math.max(-10.4,Math.min(20.5,tg.z)),i=z<11.4;pend=-1;route(Math.max(i?-20.2:-28,Math.min(i?20.2:28,tg.x)),z)}};
+const cp=new THREE.Vector3(0,0,13.5);let t0=0,ph=0;
+function loop(t){requestAnimationFrame(loop);if(document.hidden){t0=t;return}const dt=Math.min((t-t0)/1000,.05);t0=t;let dx=0,dz=0,p=mg.position;
+ if(openI<0){if(keys.w||keys.arrowup){dx--;dz--}if(keys.s||keys.arrowdown){dx++;dz++}if(keys.a||keys.arrowleft){dx--;dz++}if(keys.d||keys.arrowright){dx++;dz--}}
+ if(dx||dz){want.length=0;pend=-1}else if(want.length){const w=want[0],vx=w[0]-p.x,vz=w[1]-p.z;if(Math.hypot(vx,vz)<.2){want.shift();if(!want.length&&pend>=0){open(pend);pend=-1}}else{dx=vx;dz=vz}}
+ const l=Math.hypot(dx,dz);
+ if(l){dx/=l;dz/=l;let nx=p.x+dx*3.2*dt,nz=p.z+dz*3.2*dt;const ins=nz<11.5;nx=Math.max(ins?-20.2:-28,Math.min(ins?20.2:28,nx));nz=Math.max(-10.4,Math.min(20.5,nz));
+  if(blk(nx,nz)){if(!blk(p.x,nz))nx=p.x;else if(!blk(nx,p.z))nz=p.z;else{nx=p.x;nz=p.z}}
+  p.x=nx;p.z=nz;me.rotation.y=Math.atan2(dx,dz);ph+=dt*7;const s=Math.sin(ph)*.6;L[0].rotation.x=s;L[1].rotation.x=-s;L[2].rotation.x=-s*.7;L[3].rotation.x=s*.7;me.position.y=Math.abs(Math.cos(ph))*.03}
+ else{L.forEach(a=>a.rotation.x*=.8);me.position.y=0}
+ p.y=THREE.MathUtils.lerp(p.y,p.z<11.4?.17:-.12,.25);blob.position.set(p.x,p.y+.03,p.z);you.position.set(p.x,p.y+2.45,p.z);
+ let n=-1;ROOMS.forEach((r,i)=>{if(Math.abs(p.x-r.x)<4.8&&Math.abs(p.z-r.z)<4.8)n=i});
+ if(n!=cur){cur=n;act.style.display=n>=0?'block':'none';if(n>=0)act.textContent='Knock knock: open '+ROOMS[n].n;fl.forEach((f,i)=>f.material.emissive.setHex(i==n?0x14224d:0))}
+cars.forEach(c=>{c.position.x+=c.userData.v*dt;if(Math.abs(c.position.x)>34)c.position.x=-Math.sign(c.userData.v)*34});
+ tick(t,dt,p,l);cp.lerp(p,.08);const k=(innerWidth<700?1.7:1)*zm;cam.position.set(cp.x+15*k,13*k,cp.z+15*k);cam.lookAt(cp.x,1,cp.z);R.render(S,cam)}
+requestAnimationFrame(loop);
+</script></body></html>
